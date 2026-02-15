@@ -1,0 +1,419 @@
+/** 
+*
+* COMPONENTS
+*
+*/
+
+//===================================================
+// Main nav (built for wordpress dynamic menus)
+//
+// Use this in the template file:
+//
+//              <nav id="site-navigation" class="main-navigation">
+//
+//                <!-- Optional navbar brand (need to add flex styles for this and adjust mobile button width/etc) -->
+//                <!-- <a href="#" class="navbar-brand">Brand</a> -->
+//
+//                  <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+//                      <span class="hamburger"></span>
+//                  </button>
+//              <!-- Wordpress dynamic nav goes here -->
+//              </nav>
+//
+//===================================================
+.main-navigation {
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    // Controls the placement of the menu links
+    margin: 0 0 0 0;
+    justify-content: center;
+  }
+}
+
+.main-navigation ul li a {
+  display: inline-block;
+  padding: $navbar-padding;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: $color-link;
+  transition: all .3s;
+
+  &:hover {
+    // background: $navbar-link-color-hover;
+    color: $color-link-hover;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 35px;
+  background: #fff;
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+.hamburger::before {
+  top: -10px;
+}
+
+.hamburger::after {
+  top: 10px;
+}
+
+.menu-toggle .active .hamburger::before {
+  top: 0;
+}
+
+.active .hamburger {
+  background: transparent;
+}
+
+.active .hamburger::before,
+.active .hamburger::after {
+  top: 0;
+}
+
+.active .hamburger::before {
+  transform: rotate(45deg);
+}
+
+.active .hamburger::after {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 500px) {
+  body {
+    // Need to adjust this according to collapsed menu size/padding
+    margin-top: calc(#{$mobile-navbar-padding} * 2.5);
+  }
+  .main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    ul {
+      opacity: 0;
+      max-height: 0;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+  }
+  .menu-toggle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: $mobile-navbar-padding;
+    background: $mobile-navbar-background-color;
+    border: none;
+    margin-bottom: 0;
+    &:focus,
+    &:active,
+    &:hover {
+        background: $mobile-navbar-background-color;
+        border: none;
+        margin-bottom: 0;
+    }
+  }
+  .main-navigation.toggled ul {
+    opacity: 1;
+    max-height: 100%;
+    background: #fff;
+  }
+}
+
+//===================================================
+// Blockquote for citations etc
+//
+//     <blockquote>
+// 	      <p>A woman must have money and a room of her own if she is to write fiction.</p>
+// 	      <cite>Virginia Woolf</cite>
+//     </blockquote>
+//
+//===================================================
+blockquote {
+  background: $blockquote-background-color;
+  margin: 0 0 $typography-margins 0;
+  border-left: 10px solid $blockquote-border-color;
+  padding: 0 1.5rem;
+  font-size: $blockquote-font-size;
+
+  cite {
+    display: block;
+    margin-top: $typography-margins;
+    font-size: 1rem;
+  }
+}
+
+//===================================================
+// Buttons
+//
+// Use for:
+//
+// <button>, <a class="button>, <input type="submit">, <input type="button">, <input type="reset">
+//
+//===================================================
+%buttons {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: $button-border-width $button-border-style $button-border-color;
+  border-radius: $button-border-radius;
+  background: $button-background-color;
+  color: $button-color;
+  font-weight: $button-font-weight;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  padding: 1rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  transition: all .3s;
+}
+// Buttons on hover
+%buttons-hover {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  background: $button-background-hover;
+  color: $button-color;
+  text-decoration: none;
+}
+
+// Buttons on focus
+%buttons-focus {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  background: darken($button-background-color, 10%);
+  color: $button-color;
+  text-decoration: none;
+}
+
+// Add styles to .button class, button element, and button-based inputs
+#{$buttons} {
+    @extend %buttons;
+  
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  
+    &:hover {
+      @extend %buttons-hover;
+    }
+  
+    &:focus,
+    &:active {
+      @extend %buttons-focus;
+    }
+  }
+  
+// Secondary button color
+.accent-button,
+a.accent-button {
+  color: $accent-button-color;
+  border: 1px solid $accent-button-background-color;
+  background: $accent-button-background-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $accent-button-color-hover;
+    border: 1px solid darken($accent-button-background-color, 10%);
+    background: darken($accent-button-background-color, 10%);
+  }
+}
+
+// Muted buttons
+.muted-button,
+a.muted-button {
+  background: $muted-background;
+  border: $muted-border;
+  color: $muted-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $muted-color-hover;
+    border: $muted-border-hover;
+    background: $muted-background-hover;
+  }
+}
+
+// Round buttons
+.round-button,
+a.round-button {
+  border-radius: $round-buttons;
+}
+
+// Square buttons
+.square-button,
+a.square-button {
+  border-radius: 0;
+}
+
+// Full width buttons (block level)
+.full-button,
+a.full-button {
+  display: block;
+  width: 100%;
+}
+
+//===================================================
+// Forms
+//
+// Use for:
+//
+// 
+//
+//===================================================
+
+// Display for all input fields (except buttons and checkbox) 
+%forms {
+  display: block;
+  border: $form-border;
+  border-radius: $border-radius;
+  padding: 1rem;
+  outline: none;
+  background: $input-background;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+// Input fields on hover
+%forms-hover {
+  border: $form-border-hover;
+}
+
+// Input fields on focus 
+%forms-focus {
+  border: $form-border-focus;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($color-link, 30%);
+}
+
+// Variable containing all input fields 
+#{$forms} {
+  @extend %forms;
+
+  &:hover {
+    @extend %forms-hover;
+  }
+
+  &:focus,
+  &:active {
+    @extend %forms-focus;
+  }
+}
+
+textarea {
+  overflow: auto;
+  height: auto;
+}
+
+fieldset {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding-utility;
+  margin: $typography-margins 0;
+}
+
+legend {
+  padding: 0 .5rem;
+  font-weight: 600;
+}
+
+// Fix issues with select
+select {
+  color: $font-color-secondary;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+//   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
+  line-height: 1.5; // ensures text doesn't get cut off
+}
+
+select::-ms-expand {
+  display: none; // dropdown icon fix for IE
+}
+
+// Make range full width
+[type=range] {
+  width: 100%;
+}
+
+// Labels
+label {
+  font-weight: 600;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0 .5rem;
+}
+
+@include small-breakpoint {
+  .split-form {
+
+    // Split forms have right aligned labels and margins on the column
+    label {
+      text-align: right;
+      padding: 0 .5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Form validation
+// input,
+// select,
+// textarea {
+//   &.has-error {
+//     border: 1px solid $error;
+//     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($error, 35%);
+//   }
+  
+//   &.is-success {
+//     border: 1px solid $success;
+//     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($success, 25%);
+//   }
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     &.has-error {
+//       @extend .has-error;
+//     }
+    
+//     &.is-success {
+//       @extend .is-success;
+//     }
+//   }
+// }
+
+// Placeholder Text 
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: $placeholder;
+}

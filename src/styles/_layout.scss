@@ -1,0 +1,247 @@
+/**
+*
+* LAYOUT
+*
+*/
+
+// CONTAINERS
+
+.container {
+  @include container-styles
+}
+
+.container-full {
+  @include container-styles
+}
+
+.container-stretch {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+// FIXED SIZE CONTAINERS
+
+.container-sm {
+  @include container-size($x-small, $container-gutter);
+  @include container-styles
+}
+
+.container-med {
+  @include container-size($small, $container-gutter);
+  @include container-styles
+}
+
+.container-lg {
+  @include container-size($medium, $container-gutter);
+  @include container-styles
+}
+
+// MAIN CONTAINER BREAKPOINTS 
+
+@include x-small-breakpoint {
+  .container {
+    @include container-size($x-small, $container-gutter);
+  }
+}
+
+@include small-breakpoint {
+  .container {
+    @include container-size($small, $container-gutter);
+  }
+}
+
+@include medium-breakpoint {
+  .container {
+    @include container-size($medium, $container-gutter);
+  }
+}
+
+@include large-breakpoint {
+  .container {
+    @include container-size($large, $container-gutter);
+  }
+}
+
+// ROWS
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+// Clip row by height
+.row-gallery {
+  max-height: $row-gallery-height;
+  overflow: hidden;
+}
+
+[class^="col-"] {
+  padding-right: $grid-column-padding;
+  padding-left: $grid-column-padding;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// Mobile first - < x-small container size
+// col-#{$i} = col-xs
+
+// Equal auto sized columns 
+.col-auto {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: auto;
+  max-width: 100%;
+  padding-right: $grid-column-padding;
+  padding-left: $grid-column-padding;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex-basis: percentage($i / $grid-columns);
+    max-width: percentage($i / $grid-columns);
+  }
+  .col-offset-#{$i} {
+    margin-left: percentage($i / $grid-columns);
+  }
+}
+
+// Between x-small and small breakpoints
+@include x-small-breakpoint {
+
+  .col-sm {
+    flex-grow: 1;
+    flex-basis: auto;
+    max-width: 100%;
+  }
+
+  // Equal auto sized columns 
+  .col-sm-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      flex-basis: percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+    .col-sm-offset-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+
+  // Justify and align content
+  .justify-content-sm-center {
+    justify-content: center;
+  }
+
+  .justify-content-sm-between {
+    justify-content: space-between;
+  }
+
+  .justify-content-sm-around {
+    justify-content: space-around;
+  }
+}
+
+// Between small and medium breakpoints
+@include small-breakpoint {
+
+  .col-med {
+    flex-grow: 1;
+    flex-basis: auto;
+    max-width: 100%;
+  }
+
+  // Equal auto sized columns
+  .col-med-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-med-#{$i} {
+      flex-basis: percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+    .col-med-offset-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+
+  // Justify and align content
+  .justify-content-med-center {
+    justify-content: center;
+  }
+
+  .justify-content-med-between {
+    justify-content: space-between;
+  }
+
+  .justify-content-med-around {
+    justify-content: space-around;
+  }
+}
+
+// Between medium and large breakpoints
+@include medium-breakpoint {
+
+  .col-lg {
+    flex-grow: 1;
+    flex-basis: auto;
+    max-width: 100%;
+  }
+
+  // Equal auto sized columns
+  .col-lg-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      flex-basis: percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+    .col-lg-offset-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+
+  // Justify and align content
+  .justify-content-lg-center {
+    justify-content: center;
+  }
+
+  .justify-content-lg-between {
+    justify-content: space-between;
+  }
+
+  .justify-content-lg-around {
+    justify-content: space-around;
+  }
+}

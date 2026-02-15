@@ -1,0 +1,40 @@
+/*! 
+
+    Theme Name: Bathtub Theme
+    Author: Niko
+    Author URI: https://nikolashaug.com
+    Description: A lightweight portfolio theme
+    Version: 1.9
+
+*/
+
+//====================================================
+// CONFIG
+//====================================================
+
+@import "variables";
+@import "mixins";
+
+
+//====================================================
+// RESET
+//====================================================
+
+@import "normalize";
+@import "reset";
+@import "base";
+
+
+//====================================================
+// COMPONENTS
+//====================================================
+
+@import "components";
+@import "layout";
+@import "utilities";
+
+//====================================================
+// CUSTOM STYLES
+//====================================================
+
+@import "custom";

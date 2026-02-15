@@ -4,7 +4,7 @@
   "description": "Static site for bathtub cig (GitHub Pages)",
   "scripts": {
     "start": "npm run build && npx serve build -p 3000",
-    "build:css": "sass ../themes/bathtubcig/main.scss dist/style.css --style=compressed",
+    "build:css": "sass src/styles/main.scss dist/style.css --style=compressed",
     "build:content": "node scripts/build-content.js",
     "build": "npm run build:css && npm run build:content",
     "deploy": "node scripts/deploy.js",

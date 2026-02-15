@@ -9,7 +9,7 @@ const TEMPLATES_DIR = path.join(__dirname, '../templates');
 const DATA_DIR = path.join(__dirname, '../data');
 const BUILD_DIR = path.join(__dirname, '../build');
 const ASSETS_DIR = path.join(__dirname, '../assets');
-const THEME_DIR = path.join(__dirname, '../../themes/bathtubcig');
+const STATIC_ASSETS_DIR = path.join(__dirname, '..');
 
 // Ensure build directory exists
 fs.ensureDirSync(BUILD_DIR);
@@ -37,20 +37,20 @@ function copyAssets() {
     fs.copySync(customCss, path.join(BUILD_DIR, 'css/custom.css'));
   }
   
-  // Copy theme JS files
-  const themeJsDir = path.join(THEME_DIR, 'js');
-  if (fs.existsSync(themeJsDir)) {
-    fs.copySync(themeJsDir, path.join(BUILD_DIR, 'js'));
+  // Copy JS files
+  const jsDir = path.join(STATIC_ASSETS_DIR, 'js');
+  if (fs.existsSync(jsDir)) {
+    fs.copySync(jsDir, path.join(BUILD_DIR, 'js'));
   }
   
   // Copy Font Awesome CSS
-  const fontAwesomeCss = path.join(THEME_DIR, 'css/font-awesome.css');
+  const fontAwesomeCss = path.join(STATIC_ASSETS_DIR, 'css/font-awesome.css');
   if (fs.existsSync(fontAwesomeCss)) {
     fs.copySync(fontAwesomeCss, path.join(BUILD_DIR, 'css/font-awesome.css'));
   }
   
   // Copy Font Awesome webfonts
-  const webfontsDir = path.join(THEME_DIR, 'webfonts');
+  const webfontsDir = path.join(STATIC_ASSETS_DIR, 'webfonts');
   if (fs.existsSync(webfontsDir)) {
     fs.copySync(webfontsDir, path.join(BUILD_DIR, 'webfonts'));
   }

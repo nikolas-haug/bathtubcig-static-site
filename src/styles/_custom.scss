@@ -1,0 +1,171 @@
+/**
+*
+* THEME SPECIFIC COMPONENTS
+*
+*/
+
+.banner {
+  margin-top: 5rem;
+}
+
+.blog-header {
+  color: $heading-font-color-primary;
+}
+
+.title-tag a {
+  color: $font-color-primary;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.9);
+  transition: all 0.3s;
+  display: inline-block;
+
+  &:hover {
+    text-shadow: 1px 2px 15px $color-secondary;
+  }
+}
+
+.sub-title {
+  border-top: 1px solid $font-color-secondary;
+  padding-top: 1rem;
+}
+
+.banner-bottom__text {
+  border-top: 1px solid $font-color-secondary;
+  padding-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+iframe {
+  width: 100% !important;
+  margin: 0 0 $typography-margins 0;
+}
+
+.row-gallery div {
+  padding-right: 0;
+  &:last-child {
+    padding-right: 1.5rem;
+  }
+}
+
+// Contact form 7
+.wpcf7-submit {
+  width: 100%;
+}
+
+// social icons in footer
+.social-icon {
+  padding: 0 1rem;
+  transition: all .3s;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  color: $font-color-secondary;
+}
+
+// Even odd flex order
+.even-odd:nth-child(even) {
+  order: 1;
+}
+
+// press posts content
+.press-content {
+  margin-bottom: 1rem;
+  // p::before {
+  //   content: open-quote;
+  //   color: $color-white;
+  // }
+  // p::after {
+  //   content: close-quote;
+  //   color: $color-white;
+  // }
+}
+
+// press posts button
+a.button {
+  &--press {
+    transition: all .3s;
+  padding: .2rem .5rem;
+    &:hover {
+       transform: translateY(-3px);
+    }
+  }
+}
+
+.shows-block {
+  margin-bottom: 3.5rem;
+}
+
+// Show date links
+.date-ref {
+  margin: 1.5rem 0;
+  a {
+    transition: all .3s;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &::before {
+    display: inline-block;
+    content: "";
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 1.5rem;
+    background-color: $color-white;
+  }
+}
+
+// Image overlay
+// Example html snippet:
+// <div class="img-overlay">
+//     <?php the_post_thumbnail( 'full', array( 'class' => 'img-100 ') ); ?>
+//     <div class="overlay">
+//         <a href="#" class="icon" title="User Profile">
+//             <i class="fa fa-user"></i>
+//         </a>
+//     </div>
+// </div>
+
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+  // opacity: 0;
+  cursor: pointer;
+  &:hover .overlay {
+    // opacity: 1;
+    bottom: -100%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  // opacity: 0;
+  transition: .3s ease-out;
+  background: linear-gradient(to top, #121118 0%, transparent 100%);
+}
+
+// Gutenberg styles
+.wp-block-image figure {
+  margin-top: 2rem;
+}
+
+@media (max-width: 650px) {
+  .wp-block-image .alignright {
+    float: none;
+    margin: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

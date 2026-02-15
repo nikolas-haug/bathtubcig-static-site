@@ -1,0 +1,170 @@
+/** 
+*
+* VARIABLES
+*
+*/
+
+//=====================================================
+// CONTAINERS
+//=====================================================
+
+$x-small: 480px;
+$small: 850px;
+$medium: 992px;
+$large: 1200px;
+
+// Sets the width of the containers
+$container-gutter: 0.95;
+
+//=====================================================
+// GRID
+//=====================================================
+
+// Controls the number of columns for the layout
+$grid-columns: 12;
+$grid-column-padding: 1.5rem;
+
+// Rows
+$row-gallery-height: 30rem;
+
+//=====================================================
+// TYPOGRAPHY
+//=====================================================
+
+// Set the default to  1rem size for browser window resize
+$base-font-size: 62.5%;
+$base-line-height: 1.8;
+
+// Global
+$font-family-primary: 'Mukta', sans-serif;
+$font-color-primary: #92c116;
+$font-color-secondary: #f6f3f9;
+$font-size-primary: 1.6rem;
+
+// Headings
+$heading-font-family-primary: 'Mukta', sans-serif;
+$heading-font-color-primary: #f6f3f9;
+$heading-font-weight: 700;
+$heading-line-height: 1.2;
+
+// Small headings
+$h1-small: 2.8rem;
+$h2-small: 2.6rem;
+$h3-small: 2.2rem;
+$h4-small: 1.8rem;
+$h5-small: 1.4rem;
+
+// Primary headings
+$h1-primary: 3.6rem;
+$h2-primary: 3.2rem;
+$h3-primary: 2.8rem;
+$h4-primary: 2.4rem;
+$h5-primary: 2rem;
+
+// Block element spacing
+$typography-margins: 1.2rem;
+
+// Blockquote
+$blockquote-font-size: 1.3rem;
+$blockquote-border-color: #f0f0f0;
+$blockquote-background-color: transparent;
+
+// Letter spacing
+$letter-spacing-content: .8px;
+$letter-spacing-heading: 1px;
+
+//=====================================================
+// COLOR
+//=====================================================
+
+// Global
+$global-background-color: #121118;
+
+$color-primary: #FFBF9E;
+$color-secondary: #fb8be8;
+$color-tertiary: #984fdd;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-link: #92c116;
+$color-link-hover: lighten($color-link, 50%);
+// $color-link-hover: $font-color-primary;
+
+// Buttons
+$accent-color: grey;
+
+//=====================================================
+// SPACING
+//=====================================================
+
+$margin-utility: 1rem;
+$padding-utility: 1rem;
+
+//=====================================================
+// Borders
+//=====================================================
+
+$border-width: 1px;
+$border-style: solid;
+$border-color: #dedede;
+$border-radius: 4px;
+$borders: $border-width $border-style $border-color;
+
+//=====================================================
+// NAVIGATION
+//=====================================================
+
+$navbar-padding: 1rem;
+$mobile-navbar-padding: 2.5rem;
+
+$navbar-link-color-hover: lightpink;
+
+$mobile-navbar-background-color: $global-background-color;
+
+//=====================================================
+// FORMS
+//=====================================================
+
+$buttons: (".button, a.button, button, [type=submit], [type=reset], [type=button]");
+
+$forms: (
+  "[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea"
+);
+$input-background: #f6f3f9;
+$placeholder: darken($accent-color, 20%);
+$form-border: 1px solid $border-color;
+$form-border-hover: 1px solid darken($border-color, 10%);
+$form-border-focus: 1px solid $color-link;
+
+//======================================================
+// Buttons
+//======================================================
+
+$button-background-color: $color-tertiary;
+$button-background-hover: darken($button-background-color, 10%);
+$button-color: #ffffff;
+$button-font-weight: 600;
+$button-font-family: 'Mukta', sans-serif;
+$button-font-size: 1.5rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: $button-background-color;
+$button-border-radius: $border-radius;
+$button-text-transform: none;
+
+// Accent buttons
+$accent-button-background-color: $color-secondary;
+$accent-button-color: #ffffff;
+$accent-button-color-hover: lighten($accent-button-background-color, 10%);
+
+// Muted Buttons
+$muted-border: 1px solid $accent-color;
+$muted-border-hover: 1px solid darken($accent-color, 30%);
+$muted-background: transparent;
+$muted-background-hover: transparent;
+$muted-color: darken($accent-color, 50%);
+$muted-color-hover: darken($accent-color, 50%);
+
+// Round Buttons
+$round-buttons: 40px;
