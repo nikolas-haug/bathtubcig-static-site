@@ -1,0 +1,6 @@
+node_modules/
+build/
+dist/
+.DS_Store
+
+# Don't ignore docs/ - it contains the deployed site for GitHub Pages

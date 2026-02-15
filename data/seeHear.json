@@ -1,0 +1,50 @@
+[
+  {
+    "title": "therapy - Music Video",
+    "type": "youtube",
+    "url": "https://www.youtube.com/watch?v=VIDEO_ID",
+    "description": "Made by Peter M."
+  },
+  {
+    "title": "bed - EP",
+    "type": "bandcamp",
+    "embedCode": "<iframe style=\"border: 0; width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=1333864388/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/bed\">bed by bathtub cig</a></iframe>",
+    "url": "https://bathtubcig.bandcamp.com/album/bed"
+  },
+  {
+    "title": "old light - EP",
+    "type": "bandcamp",
+    "embedCode": "<iframe style=\"border: 0; width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=2137083650/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/old-light\">old light by bathtub cig</a></iframe>",
+    "url": "https://bathtubcig.bandcamp.com/album/old-light"
+  },
+  {
+    "title": "Interview about 'bed' with Simon from 'back to the city' pt.1",
+    "type": "link",
+    "url": "#"
+  },
+  {
+    "title": "Interview about 'bed' with Simon for 'back to the city' pt.2",
+    "type": "link",
+    "url": "#"
+  },
+  {
+    "title": "sepia - A quarantine song",
+    "type": "youtube",
+    "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+  },
+  {
+    "title": "Live quarantine set for crybaby lounge (starts at 23:29)",
+    "type": "link",
+    "url": "#"
+  },
+  {
+    "title": "Live at radio k",
+    "type": "link",
+    "url": "#"
+  },
+  {
+    "title": "Interview for 'old light' with Simon on 'back to the city'",
+    "type": "link",
+    "url": "#"
+  }
+]

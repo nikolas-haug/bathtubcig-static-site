@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body>
+    {{> header}}
+    {{> nav}}
+    
+    {{#heroImage}}
+    <div class="container-med">
+        <div class="hero-image">
+            <img src="{{heroImage}}" alt="{{title}}" class="img-100">
+        </div>
+    </div>
+    {{/heroImage}}
+    <main class="container-med">
+        <div class="row">
+            <div class="col">
+                <h2>{{title}}</h2>
+                {{#introContent}}
+                <div class="page-intro">{{introContent}}</div>
+                {{/introContent}}
+                <div class="upcoming-shows">
+                    <h3>Upcoming Shows</h3>
+                    {{upcomingShows}}
+                    <button class="jsSeePastShows">See Past Shows</button>
+                </div>
+                
+                <div class="past-shows" style="display: none;">
+                    <h3>Past Shows</h3>
+                    {{pastShows}}
+                    <button class="jsSeeUpcomingShows">See Upcoming Shows</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    {{> footer}}
+</body>
+</html>

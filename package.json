@@ -1,0 +1,25 @@
+{
+  "name": "bathtubcig-static-site",
+  "version": "1.0.0",
+  "description": "Static site for bathtub cig (GitHub Pages)",
+  "scripts": {
+    "start": "npm run build && npx serve build -p 3000",
+    "build:css": "sass ../themes/bathtubcig/main.scss dist/style.css --style=compressed",
+    "build:content": "node scripts/build-content.js",
+    "build": "npm run build:css && npm run build:content",
+    "deploy": "node scripts/deploy.js",
+    "deploy:all": "npm run build && npm run deploy",
+    "dev": "npm run build && concurrently \"node scripts/build-content.js --watch\" \"npx serve build -p 3000\"",
+    "serve": "npm run build && npx serve build -p 3000"
+  },
+  "dependencies": {
+    "marked": "^12.0.0",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.2.0",
+    "chokidar": "^3.6.0",
+    "sass": "^1.70.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

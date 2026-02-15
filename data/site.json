@@ -1,0 +1,17 @@
+{
+  "siteTitle": "bathtub cig",
+  "siteDescription": "intimate depression pop",
+  "nav": [
+    {"label": "Home", "url": "/"},
+    {"label": "Press", "url": "/press/"},
+    {"label": "Shows", "url": "/shows/"},
+    {"label": "See/Hear", "url": "/see-hear/"},
+    {"label": "Contact", "url": "/contact/"}
+  ],
+  "socialLinks": [
+    {"icon": "fab fa-instagram", "url": "https://instagram.com/bathtubcig"},
+    {"icon": "fab fa-spotify", "url": "https://open.spotify.com/artist/6YQPJVwbWzktHmpRX3Pz4i"},
+    {"icon": "fab fa-bandcamp", "url": "https://bathtubcig.bandcamp.com"}
+  ],
+  "googleVerification": "q2ah7SqYLssqGqwww5yp8vGo39TOQtQZtDWE4KgPIE0"
+}
