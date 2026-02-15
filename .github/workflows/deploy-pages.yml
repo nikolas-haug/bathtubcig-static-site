@@ -1,11 +1,11 @@
 # Build the bathtub cig static site and deploy to GitHub Pages.
-# Runs on every push to main. Repo root = this folder.
+# Runs on every push to master. Repo root = this folder.
 
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
