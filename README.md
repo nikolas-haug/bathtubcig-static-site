@@ -171,7 +171,7 @@ When the client edits markdown or JSON files on GitHub, the site rebuilds and de
 3. Under "Build and deployment", set **Source** to **GitHub Actions** (not "Deploy from a branch").
 4. Done. Every push to `main` triggers the workflow in `.github/workflows/deploy-pages.yml` — it builds the site and deploys to GitHub Pages. Changes typically go live within 1–2 minutes.
 
-The workflow lives at the repo root: `.github/workflows/deploy-pages.yml`.
+The workflow is in this repo: `.github/workflows/deploy-pages.yml`.
 
 ### Option 2: Manual deploy (local build)
 
