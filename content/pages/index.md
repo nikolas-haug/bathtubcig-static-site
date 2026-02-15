@@ -5,11 +5,7 @@ permalink: /
 heroImage: /images/band/BTC.band_.07.jpg
 ---
 
-TEST!!!
-
-TESTING!!!!
-
-TEST!!!!!
+TEST!!! - Another test!
 
 Bathtub cig is the intimate depression pop project of Hilary James. Born in a Minneapolis bedroom, an honest attempt at coping with her long struggle with mental health.
 
