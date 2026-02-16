@@ -55,6 +55,20 @@ function copyAssets() {
     fs.copySync(imagesDir, path.join(BUILD_DIR, 'images'));
     console.log('Copied image assets');
   }
+  
+  // Copy llms.txt for AI discoverability
+  const llmsTxt = path.join(STATIC_ASSETS_DIR, 'llms.txt');
+  if (fs.existsSync(llmsTxt)) {
+    fs.copySync(llmsTxt, path.join(BUILD_DIR, 'llms.txt'));
+    console.log('Copied llms.txt');
+  }
+  
+  // Copy robots.txt for SEO
+  const robotsTxt = path.join(STATIC_ASSETS_DIR, 'robots.txt');
+  if (fs.existsSync(robotsTxt)) {
+    fs.copySync(robotsTxt, path.join(BUILD_DIR, 'robots.txt'));
+    console.log('Copied robots.txt');
+  }
 }
 
 // Read template file
@@ -147,6 +161,53 @@ function formatDate(dateString) {
   });
 }
 
+// Generate SEO metadata with defaults
+function generateSEOMeta(page, siteData, baseUrl, fullUrl) {
+  const defaults = {
+    metaTitle: page.frontmatter.metaTitle || `${page.frontmatter.title} - ${siteData.siteTitle}`,
+    metaDescription: page.frontmatter.metaDescription || siteData.siteDescription,
+    metaKeywords: page.frontmatter.metaKeywords || 'bathtub cig, indie music, depression pop, Minneapolis music, Hilary James',
+    metaAuthor: page.frontmatter.metaAuthor || 'bathtub cig',
+    metaRobots: page.frontmatter.metaRobots || 'index, follow',
+    canonicalUrl: page.frontmatter.canonicalUrl || fullUrl,
+    
+    // Open Graph
+    ogType: page.frontmatter.ogType || 'website',
+    ogTitle: page.frontmatter.ogTitle || page.frontmatter.metaTitle || `${page.frontmatter.title} - ${siteData.siteTitle}`,
+    ogDescription: page.frontmatter.ogDescription || page.frontmatter.metaDescription || siteData.siteDescription,
+    ogImage: page.frontmatter.ogImage || (page.frontmatter.heroImage ? `https://bathtubcig.com/${page.frontmatter.heroImage.replace(/^\//, '')}` : 'https://bathtubcig.com/images/band/BTC.band_.07.jpg'),
+    
+    // Twitter
+    twitterTitle: page.frontmatter.twitterTitle || page.frontmatter.ogTitle || page.frontmatter.metaTitle || `${page.frontmatter.title} - ${siteData.siteTitle}`,
+    twitterDescription: page.frontmatter.twitterDescription || page.frontmatter.ogDescription || page.frontmatter.metaDescription || siteData.siteDescription,
+    twitterImage: page.frontmatter.twitterImage || page.frontmatter.ogImage || (page.frontmatter.heroImage ? `https://bathtubcig.com/${page.frontmatter.heroImage.replace(/^\//, '')}` : 'https://bathtubcig.com/images/band/BTC.band_.07.jpg'),
+    
+    // Schema.org
+    schemaType: page.frontmatter.schemaType || 'MusicGroup'
+  };
+  
+  return defaults;
+}
+
+// Generate sitemap.xml
+function generateSitemap(pages) {
+  const baseUrl = 'https://bathtubcig.com';
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  const urlEntries = pages.map(page => `
+  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${page.changefreq || 'monthly'}</changefreq>
+    <priority>${page.priority || '0.5'}</priority>
+  </url>`).join('');
+  
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlEntries}
+</urlset>`;
+}
+
 // Build all content
 function buildAll() {
   console.log('Building content...');
@@ -174,6 +235,7 @@ function buildAll() {
   // Build homepage
   const indexMd = processMarkdown(path.join(CONTENT_DIR, 'pages/index.md'));
   const pageTemplate = readTemplate('page');
+  const seoMeta = generateSEOMeta(indexMd, siteData, './', 'https://bathtubcig.com/');
   const indexHTML = generateHTML(pageTemplate, {
     siteTitle: siteData.siteTitle,
     siteDescription: siteData.siteDescription,
@@ -184,13 +246,15 @@ function buildAll() {
     title: indexMd.frontmatter.title,
     content: indexMd.content,
     heroImage: indexMd.frontmatter.heroImage ? `./${indexMd.frontmatter.heroImage.replace(/^\//, '')}` : '',
-    baseUrl: './'
+    baseUrl: './',
+    ...seoMeta
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'index.html'), indexHTML);
   
   // Build contact page
   const contactMd = processMarkdown(path.join(CONTENT_DIR, 'pages/contact.md'));
   const contactTemplate = readTemplate('contact');
+  const contactSeoMeta = generateSEOMeta(contactMd, siteData, '../', 'https://bathtubcig.com/contact/');
   const contactHTML = generateHTML(contactTemplate, {
     siteTitle: siteData.siteTitle,
     siteDescription: siteData.siteDescription,
@@ -201,7 +265,8 @@ function buildAll() {
     title: contactMd.frontmatter.title,
     content: contactMd.content,
     heroImage: contactMd.frontmatter.heroImage ? `../${contactMd.frontmatter.heroImage.replace(/^\//, '')}` : '',
-    baseUrl: '../'
+    baseUrl: '../',
+    ...contactSeoMeta
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'contact/index.html'), contactHTML);
   
@@ -209,6 +274,7 @@ function buildAll() {
   const pressMd = processMarkdown(path.join(CONTENT_DIR, 'pages/press.md'));
   const pressTemplate = readTemplate('press');
   const pressBaseUrl = '../';
+  const pressSeoMeta = generateSEOMeta(pressMd, siteData, pressBaseUrl, 'https://bathtubcig.com/press/');
   const pressItemsHTML = pressData.map(item => `
     <div class="press-item">
       <p>${item.snippet}</p>
@@ -227,13 +293,16 @@ function buildAll() {
     heroImage: pressMd.frontmatter.heroImage ? pressBaseUrl + pressMd.frontmatter.heroImage.replace(/^\//, '') : '',
     introContent: pressMd.content || '',
     pressItems: pressItemsHTML,
-    baseUrl: pressBaseUrl
+    baseUrl: pressBaseUrl,
+    ...pressSeoMeta
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'press/index.html'), pressHTML);
   
   // Build shows page (from markdown + JSON)
   const showsMd = processMarkdown(path.join(CONTENT_DIR, 'pages/shows.md'));
   const showsTemplate = readTemplate('shows');
+  const showsBaseUrl = '../';
+  const showsSeoMeta = generateSEOMeta(showsMd, siteData, showsBaseUrl, 'https://bathtubcig.com/shows/');
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
@@ -263,7 +332,6 @@ function buildAll() {
     </p>
   `).join('\n');
   
-  const showsBaseUrl = '../';
   const showsHTML = generateHTML(showsTemplate, {
     siteTitle: siteData.siteTitle,
     siteDescription: siteData.siteDescription,
@@ -276,7 +344,8 @@ function buildAll() {
     introContent: showsMd.content || '',
     upcomingShows: upcomingShowsHTML,
     pastShows: pastShowsHTML,
-    baseUrl: showsBaseUrl
+    baseUrl: showsBaseUrl,
+    ...showsSeoMeta
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'shows/index.html'), showsHTML);
   
@@ -284,6 +353,7 @@ function buildAll() {
   const seeHearMd = processMarkdown(path.join(CONTENT_DIR, 'pages/see-hear.md'));
   const seeHearTemplate = readTemplate('see-hear');
   const seeHearBaseUrl = '../';
+  const seeHearSeoMeta = generateSEOMeta(seeHearMd, siteData, seeHearBaseUrl, 'https://bathtubcig.com/see-hear/');
   const mediaItemsHTML = seeHearData.map(item => {
     const imageHtml = item.image ? `<img src="${seeHearBaseUrl}${item.image.replace(/^\//, '')}" alt="${item.title}" class="media-item-image">` : '';
     if (item.type === 'bandcamp' && item.embedCode) {
@@ -327,9 +397,22 @@ function buildAll() {
     heroImage: seeHearMd.frontmatter.heroImage ? seeHearBaseUrl + seeHearMd.frontmatter.heroImage.replace(/^\//, '') : '',
     introContent: seeHearMd.content || '',
     mediaItems: mediaItemsHTML,
-    baseUrl: seeHearBaseUrl
+    baseUrl: seeHearBaseUrl,
+    ...seeHearSeoMeta
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'see-hear/index.html'), seeHearHTML);
+  
+  // Generate sitemap.xml
+  const sitemapPages = [
+    { url: '/', priority: '1.0', changefreq: 'monthly' },
+    { url: '/contact/', priority: '0.7', changefreq: 'yearly' },
+    { url: '/press/', priority: '0.8', changefreq: 'monthly' },
+    { url: '/shows/', priority: '0.9', changefreq: 'weekly' },
+    { url: '/see-hear/', priority: '0.8', changefreq: 'monthly' }
+  ];
+  const sitemap = generateSitemap(sitemapPages);
+  fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), sitemap);
+  console.log('Generated sitemap.xml');
   
   console.log('Build complete!');
   console.log(`- Homepage: index.html`);
