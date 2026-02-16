@@ -2,7 +2,7 @@
 title: Press
 layout: press
 permalink: /press
-heroImage: /images/band/BTC.band_.08.jpg
+heroImage: /images/profile/bathtub-cig-press-photo.jpeg
 ---
 
-Press and reviews for bathtub cig.
+

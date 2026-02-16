@@ -4,6 +4,9 @@
 *
 */
 
+@use "variables" as *;
+@use "mixins" as *;
+
 html {
     font-size: $base-font-size;
     font-family: $font-family-primary;

@@ -2,7 +2,6 @@
 title: Shows
 layout: shows
 permalink: /shows
-heroImage: /images/band/BTC.band_.07.jpg
+heroImage: /images/profile/bathtub-cig-shows-pic.jpg
 ---
 
-Upcoming and past show dates.

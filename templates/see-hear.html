@@ -7,6 +7,7 @@
     
     {{#heroImage}}
     <div class="container-med">
+        <h2 class="sub-title">{{title}}</h2>
         <div class="hero-image">
             <img src="{{heroImage}}" alt="{{title}}" class="img-100">
         </div>
@@ -15,13 +16,9 @@
     <main class="container-med">
         <div class="row">
             <div class="col">
-                <h2>{{title}}</h2>
                 {{#introContent}}
                 <div class="page-intro">{{introContent}}</div>
                 {{/introContent}}
-                <div class="media-content">
-                    {{mediaItems}}
-                </div>
             </div>
         </div>
     </main>

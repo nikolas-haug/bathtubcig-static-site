@@ -31,12 +31,6 @@ function copyAssets() {
     fs.copySync(distDir, path.join(BUILD_DIR, 'dist'));
   }
   
-  // Copy custom CSS
-  const customCss = path.join(ASSETS_DIR, 'custom.css');
-  if (fs.existsSync(customCss)) {
-    fs.copySync(customCss, path.join(BUILD_DIR, 'css/custom.css'));
-  }
-  
   // Copy JS files
   const jsDir = path.join(STATIC_ASSETS_DIR, 'js');
   if (fs.existsSync(jsDir)) {
@@ -216,10 +210,8 @@ function buildAll() {
   const pressBaseUrl = '../';
   const pressItemsHTML = pressData.map(item => `
     <div class="press-item">
-      ${item.image ? `<img src="${pressBaseUrl}${item.image.replace(/^\//, '')}" alt="${item.title}" class="press-item-image">` : ''}
-      <h3>${item.title}</h3>
       <p>${item.snippet}</p>
-      ${item.readMoreUrl ? `<p><a href="${item.readMoreUrl}" target="_blank" rel="noopener">Read More</a></p>` : ''}
+      ${item.readMoreUrl ? `<a href="${item.readMoreUrl}" class="button button--press" target="_blank" rel="noopener">Read More</a>` : ''}
     </div>
   `).join('\n');
   
@@ -249,20 +241,25 @@ function buildAll() {
   
   const upcomingShowsHTML = upcomingShows.length > 0 
     ? upcomingShows.map(show => `
-        <div class="show-item date-ref">
-          <p><strong>${formatDate(show.date)}</strong></p>
-          <p>${show.description}</p>
-          ${show.url ? `<p><a href="${show.url}" target="_blank" rel="noopener">More Info</a></p>` : ''}
-        </div>
+
+      <p class="date-ref">
+        <a href="${show.url}" target="_blank" rel="noopener"> 
+          <span class="date-ref__date">${formatDate(show.date)}</span>
+          <span> - </span>
+          ${show.description}
+        </a>
+      </p>
       `).join('\n')
     : '<p>No upcoming shows at the moment. Check back soon!</p>';
   
   const pastShowsHTML = pastShows.map(show => `
-    <div class="show-item date-ref">
-      <p><strong>${formatDate(show.date)}</strong></p>
-      <p>${show.description}</p>
-      ${show.url ? `<p><a href="${show.url}" target="_blank" rel="noopener">More Info</a></p>` : ''}
-    </div>
+    <p class="date-ref">
+      <a href="${show.url}" target="_blank" rel="noopener"> 
+        <span class="date-ref__date">${formatDate(show.date)}</span>
+        <span> - </span>
+        ${show.description}
+      </a>
+    </p>
   `).join('\n');
   
   const showsBaseUrl = '../';
@@ -345,11 +342,15 @@ function buildAll() {
 function watch() {
   console.log('Watching for changes...');
   
+  const distDir = path.join(__dirname, '../dist');
+  const scriptsDir = path.join(__dirname, '..', 'scripts');
   const watcher = chokidar.watch([
     path.join(CONTENT_DIR, '**/*.md'),
     path.join(TEMPLATES_DIR, '**/*.html'),
     path.join(DATA_DIR, '**/*.json'),
-    path.join(ASSETS_DIR, '**/*')
+    path.join(ASSETS_DIR, '**/*'),
+    scriptsDir,
+    ...(fs.existsSync(distDir) ? [distDir] : [])
   ], {
     ignored: /node_modules/,
     persistent: true

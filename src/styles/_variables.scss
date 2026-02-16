@@ -4,6 +4,8 @@
 *
 */
 
+@use "sass:color";
+
 //=====================================================
 // CONTAINERS
 //=====================================================
@@ -88,7 +90,7 @@ $color-white: #fff;
 $color-black: #000;
 
 $color-link: #92c116;
-$color-link-hover: lighten($color-link, 50%);
+$color-link-hover: color.adjust($color-link, $lightness: 50%);
 // $color-link-hover: $font-color-primary;
 
 // Buttons
@@ -132,9 +134,9 @@ $forms: (
   "[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea"
 );
 $input-background: #f6f3f9;
-$placeholder: darken($accent-color, 20%);
+$placeholder: color.adjust($accent-color, $lightness: -20%);
 $form-border: 1px solid $border-color;
-$form-border-hover: 1px solid darken($border-color, 10%);
+$form-border-hover: 1px solid color.adjust($border-color, $lightness: -10%);
 $form-border-focus: 1px solid $color-link;
 
 //======================================================
@@ -142,7 +144,7 @@ $form-border-focus: 1px solid $color-link;
 //======================================================
 
 $button-background-color: $color-tertiary;
-$button-background-hover: darken($button-background-color, 10%);
+$button-background-hover: color.adjust($button-background-color, $lightness: -10%);
 $button-color: #ffffff;
 $button-font-weight: 600;
 $button-font-family: 'Mukta', sans-serif;
@@ -156,15 +158,15 @@ $button-text-transform: none;
 // Accent buttons
 $accent-button-background-color: $color-secondary;
 $accent-button-color: #ffffff;
-$accent-button-color-hover: lighten($accent-button-background-color, 10%);
+$accent-button-color-hover: color.adjust($accent-button-background-color, $lightness: 10%);
 
 // Muted Buttons
 $muted-border: 1px solid $accent-color;
-$muted-border-hover: 1px solid darken($accent-color, 30%);
+$muted-border-hover: 1px solid color.adjust($accent-color, $lightness: -30%);
 $muted-background: transparent;
 $muted-background-hover: transparent;
-$muted-color: darken($accent-color, 50%);
-$muted-color-hover: darken($accent-color, 50%);
+$muted-color: color.adjust($accent-color, $lightness: -50%);
+$muted-color-hover: color.adjust($accent-color, $lightness: -50%);
 
 // Round Buttons
 $round-buttons: 40px;

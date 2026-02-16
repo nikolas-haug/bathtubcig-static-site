@@ -4,6 +4,8 @@
 *
 */
 
+@use "variables" as *;
+
 @mixin x-small-breakpoint {
     @media (min-width: #{$x-small}) {
         @content;

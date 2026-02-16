@@ -4,6 +4,9 @@
 *
 */
 
+@use "variables" as *;
+@use "mixins" as *;
+
 // Clearfix
 .clearfix {
     content: "";

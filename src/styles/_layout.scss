@@ -4,6 +4,10 @@
 *
 */
 
+@use "sass:math";
+@use "variables" as *;
+@use "mixins" as *;
+
 // CONTAINERS
 
 .container {
@@ -118,11 +122,11 @@
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    flex-basis: percentage($i / $grid-columns);
-    max-width: percentage($i / $grid-columns);
+    flex-basis: math.percentage(math.div($i, $grid-columns));
+    max-width: math.percentage(math.div($i, $grid-columns));
   }
   .col-offset-#{$i} {
-    margin-left: percentage($i / $grid-columns);
+    margin-left: math.percentage(math.div($i, $grid-columns));
   }
 }
 
@@ -144,11 +148,11 @@
 
   @for $i from 1 through $grid-columns {
     .col-sm-#{$i} {
-      flex-basis: percentage($i / $grid-columns);
-      max-width: percentage($i / $grid-columns);
+      flex-basis: math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
     }
     .col-sm-offset-#{$i} {
-      margin-left: percentage($i / $grid-columns);
+      margin-left: math.percentage(math.div($i, $grid-columns));
     }
   }
 
@@ -184,11 +188,11 @@
 
   @for $i from 1 through $grid-columns {
     .col-med-#{$i} {
-      flex-basis: percentage($i / $grid-columns);
-      max-width: percentage($i / $grid-columns);
+      flex-basis: math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
     }
     .col-med-offset-#{$i} {
-      margin-left: percentage($i / $grid-columns);
+      margin-left: math.percentage(math.div($i, $grid-columns));
     }
   }
 
@@ -224,11 +228,11 @@
 
   @for $i from 1 through $grid-columns {
     .col-lg-#{$i} {
-      flex-basis: percentage($i / $grid-columns);
-      max-width: percentage($i / $grid-columns);
+      flex-basis: math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
     }
     .col-lg-offset-#{$i} {
-      margin-left: percentage($i / $grid-columns);
+      margin-left: math.percentage(math.div($i, $grid-columns));
     }
   }
 
