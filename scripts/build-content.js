@@ -190,7 +190,8 @@ function buildAll() {
   
   // Build contact page
   const contactMd = processMarkdown(path.join(CONTENT_DIR, 'pages/contact.md'));
-  const contactHTML = generateHTML(pageTemplate, {
+  const contactTemplate = readTemplate('contact');
+  const contactHTML = generateHTML(contactTemplate, {
     siteTitle: siteData.siteTitle,
     siteDescription: siteData.siteDescription,
     googleVerification: siteData.googleVerification,
