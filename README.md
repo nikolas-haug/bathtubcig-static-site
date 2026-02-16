@@ -61,9 +61,16 @@ npm run build
 ```
 
 This will:
-1. Compile SCSS from `../themes/bathtubcig/` to `dist/style.css`
+1. Compile SCSS from `src/styles/` to `dist/style.css`
 2. Process markdown and JSON to generate HTML in `build/`
-3. Copy theme JavaScript, Font Awesome, and other assets
+3. Copy JavaScript, Font Awesome, and other assets
+
+The build uses **relative paths** for all links and assets, so the site works:
+- Locally with `npm run serve`
+- On GitHub Pages (subdirectory deployment like `/repo-name/`)
+- On custom domains
+
+No configuration changes needed when switching between these environments.
 
 ### Development Workflow
 

@@ -165,45 +165,47 @@ function buildAll() {
   const showsData = readData('shows');
   const seeHearData = readData('seeHear');
   
-  // Generate nav items HTML
-  const navItemsHTML = siteData.nav.map(item => 
-    `<li><a href="${item.url}">${item.label}</a></li>`
-  ).join('\n                ');
+  // Helper function to generate nav HTML with relative paths
+  function generateNavHTML(baseUrl) {
+    return siteData.nav.map(item => 
+      `<li><a href="${baseUrl}${item.url}">${item.label}</a></li>`
+    ).join('\n                ');
+  }
   
   // Generate social icons HTML
   const socialIconsHTML = siteData.socialLinks.map(link => 
     `<a href="${link.url}" target="_blank" rel="noopener"><span class="social-icon ${link.icon}"></span></a>`
   ).join('\n                ');
   
-  // Common data for all pages
-  const commonData = {
-    siteTitle: siteData.siteTitle,
-    siteDescription: siteData.siteDescription,
-    googleVerification: siteData.googleVerification,
-    navItems: navItemsHTML,
-    socialIcons: socialIconsHTML,
-    year: new Date().getFullYear()
-  };
-  
   // Build homepage
   const indexMd = processMarkdown(path.join(CONTENT_DIR, 'pages/index.md'));
   const pageTemplate = readTemplate('page');
   const indexHTML = generateHTML(pageTemplate, {
-    ...commonData,
+    siteTitle: siteData.siteTitle,
+    siteDescription: siteData.siteDescription,
+    googleVerification: siteData.googleVerification,
+    navItems: generateNavHTML('./'),
+    socialIcons: socialIconsHTML,
+    year: new Date().getFullYear(),
     title: indexMd.frontmatter.title,
     content: indexMd.content,
-    heroImage: indexMd.frontmatter.heroImage || '',
-    baseUrl: ''
+    heroImage: indexMd.frontmatter.heroImage ? `./${indexMd.frontmatter.heroImage.replace(/^\//, '')}` : '',
+    baseUrl: './'
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'index.html'), indexHTML);
   
   // Build contact page
   const contactMd = processMarkdown(path.join(CONTENT_DIR, 'pages/contact.md'));
   const contactHTML = generateHTML(pageTemplate, {
-    ...commonData,
+    siteTitle: siteData.siteTitle,
+    siteDescription: siteData.siteDescription,
+    googleVerification: siteData.googleVerification,
+    navItems: generateNavHTML('../'),
+    socialIcons: socialIconsHTML,
+    year: new Date().getFullYear(),
     title: contactMd.frontmatter.title,
     content: contactMd.content,
-    heroImage: contactMd.frontmatter.heroImage || '',
+    heroImage: contactMd.frontmatter.heroImage ? `../${contactMd.frontmatter.heroImage.replace(/^\//, '')}` : '',
     baseUrl: '../'
   });
   fs.writeFileSync(path.join(BUILD_DIR, 'contact/index.html'), contactHTML);
@@ -211,6 +213,7 @@ function buildAll() {
   // Build press page (from markdown + JSON)
   const pressMd = processMarkdown(path.join(CONTENT_DIR, 'pages/press.md'));
   const pressTemplate = readTemplate('press');
+  const pressBaseUrl = '../';
   const pressItemsHTML = pressData.map(item => `
     <div class="press-item">
       ${item.image ? `<img src="${pressBaseUrl}${item.image.replace(/^\//, '')}" alt="${item.title}" class="press-item-image">` : ''}
@@ -220,9 +223,13 @@ function buildAll() {
     </div>
   `).join('\n');
   
-  const pressBaseUrl = '../';
   const pressHTML = generateHTML(pressTemplate, {
-    ...commonData,
+    siteTitle: siteData.siteTitle,
+    siteDescription: siteData.siteDescription,
+    googleVerification: siteData.googleVerification,
+    navItems: generateNavHTML('../'),
+    socialIcons: socialIconsHTML,
+    year: new Date().getFullYear(),
     title: pressMd.frontmatter.title || 'Press',
     heroImage: pressMd.frontmatter.heroImage ? pressBaseUrl + pressMd.frontmatter.heroImage.replace(/^\//, '') : '',
     introContent: pressMd.content || '',
@@ -260,7 +267,12 @@ function buildAll() {
   
   const showsBaseUrl = '../';
   const showsHTML = generateHTML(showsTemplate, {
-    ...commonData,
+    siteTitle: siteData.siteTitle,
+    siteDescription: siteData.siteDescription,
+    googleVerification: siteData.googleVerification,
+    navItems: generateNavHTML('../'),
+    socialIcons: socialIconsHTML,
+    year: new Date().getFullYear(),
     title: showsMd.frontmatter.title || 'Shows',
     heroImage: showsMd.frontmatter.heroImage ? showsBaseUrl + showsMd.frontmatter.heroImage.replace(/^\//, '') : '',
     introContent: showsMd.content || '',
@@ -307,7 +319,12 @@ function buildAll() {
   }).join('\n');
   
   const seeHearHTML = generateHTML(seeHearTemplate, {
-    ...commonData,
+    siteTitle: siteData.siteTitle,
+    siteDescription: siteData.siteDescription,
+    googleVerification: siteData.googleVerification,
+    navItems: generateNavHTML('../'),
+    socialIcons: socialIconsHTML,
+    year: new Date().getFullYear(),
     title: seeHearMd.frontmatter.title || 'See/Hear',
     heroImage: seeHearMd.frontmatter.heroImage ? seeHearBaseUrl + seeHearMd.frontmatter.heroImage.replace(/^\//, '') : '',
     introContent: seeHearMd.content || '',
