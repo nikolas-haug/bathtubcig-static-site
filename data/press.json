@@ -1,10 +1,12 @@
-[
-  {
-    "snippet": "The week’s best new music: “(Red Pine) is a bittersweet little indie song covering all the important parts of life: 69ing, abstaining from weed, saying goodbye”- Keith Harris, Racket",
-    "readMoreUrl": "https://racketmn.com/its-time-again-for-the-weeks-best-new-music-and-its-worst"
-  },
-  {
-    "snippet": "\"A project which looks to evoke those private moments of contemplation and small comforts, be they born of wallowing or self-care\" –Jon Doyle and Liam Doyle, Various Small Flames",
-    "readMoreUrl": "https://varioussmallflames.co.uk/2024/02/06/weekly-listening-february-2024-1/"
-  }
-]
+{
+  "press": [
+    {
+      "snippet": "The week's best new music: \"(Red Pine) is a bittersweet little indie song covering all the important parts of life: 69ing, abstaining from weed, saying goodbye\"- Keith Harris, Racket",
+      "readMoreUrl": "https://racketmn.com/its-time-again-for-the-weeks-best-new-music-and-its-worst"
+    },
+    {
+      "snippet": "\"A project which looks to evoke those private moments of contemplation and small comforts, be they born of wallowing or self-care\" –Jon Doyle and Liam Doyle, Various Small Flames",
+      "readMoreUrl": "https://varioussmallflames.co.uk/2024/02/06/weekly-listening-february-2024-1/"
+    }
+  ]
+}

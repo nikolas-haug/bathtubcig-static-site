@@ -22,6 +22,7 @@ fs.ensureDirSync(path.join(BUILD_DIR, 'css'));
 fs.ensureDirSync(path.join(BUILD_DIR, 'dist'));
 fs.ensureDirSync(path.join(BUILD_DIR, 'webfonts'));
 fs.ensureDirSync(path.join(BUILD_DIR, 'images'));
+fs.ensureDirSync(path.join(BUILD_DIR, 'admin'));
 
 // Copy assets to build directory
 function copyAssets() {
@@ -68,6 +69,13 @@ function copyAssets() {
   if (fs.existsSync(robotsTxt)) {
     fs.copySync(robotsTxt, path.join(BUILD_DIR, 'robots.txt'));
     console.log('Copied robots.txt');
+  }
+  
+  // Copy admin folder for Decap CMS
+  const adminDir = path.join(STATIC_ASSETS_DIR, 'admin');
+  if (fs.existsSync(adminDir)) {
+    fs.copySync(adminDir, path.join(BUILD_DIR, 'admin'));
+    console.log('Copied admin folder for Decap CMS');
   }
 }
 
@@ -216,9 +224,14 @@ function buildAll() {
   
   // Load site data
   const siteData = readData('site');
-  const pressData = readData('press');
-  const showsData = readData('shows');
-  const seeHearData = readData('seeHear');
+  const pressDataFile = readData('press');
+  const showsDataFile = readData('shows');
+  const seeHearDataFile = readData('seeHear');
+  
+  // Extract arrays from wrapped JSON objects (for Decap CMS compatibility)
+  const pressData = pressDataFile.press || pressDataFile;
+  const showsData = showsDataFile.shows || showsDataFile;
+  const seeHearData = seeHearDataFile.seeHear || seeHearDataFile;
   
   // Helper function to generate nav HTML with relative paths
   function generateNavHTML(baseUrl) {
@@ -428,13 +441,15 @@ function watch() {
   
   const distDir = path.join(__dirname, '../dist');
   const scriptsDir = path.join(__dirname, '..', 'scripts');
+  const adminDir = path.join(__dirname, '..', 'admin');
   const watcher = chokidar.watch([
     path.join(CONTENT_DIR, '**/*.md'),
     path.join(TEMPLATES_DIR, '**/*.html'),
     path.join(DATA_DIR, '**/*.json'),
     path.join(ASSETS_DIR, '**/*'),
     scriptsDir,
-    ...(fs.existsSync(distDir) ? [distDir] : [])
+    ...(fs.existsSync(distDir) ? [distDir] : []),
+    ...(fs.existsSync(adminDir) ? [adminDir] : [])
   ], {
     ignored: /node_modules/,
     persistent: true

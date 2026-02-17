@@ -1,0 +1,83 @@
+backend:
+  name: github
+  repo: nikolas-haug/bathtubcig-static-site
+  branch: master
+
+# Local backend for development - when this is true, it will use the local proxy instead
+local_backend: true
+
+media_folder: "assets/images" # Where uploaded images will be stored
+public_folder: "/images" # Public URL path for uploaded images
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: false # Don't allow creating new pages via CMS
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Permalink", name: "permalink", widget: "string", required: false}
+      - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
+      - {label: "Meta Title", name: "metaTitle", widget: "string", required: false}
+      - {label: "Meta Description", name: "metaDescription", widget: "text", required: false}
+      - {label: "Meta Keywords", name: "metaKeywords", widget: "string", required: false}
+      - {label: "OG Title", name: "ogTitle", widget: "string", required: false}
+      - {label: "OG Description", name: "ogDescription", widget: "text", required: false}
+      - {label: "OG Image", name: "ogImage", widget: "string", required: false}
+      - {label: "Schema Type", name: "schemaType", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+
+  - name: "press"
+    label: "Press"
+    extension: "json"
+    format: "json"
+    files:
+      - label: "Press Items"
+        name: "press"
+        file: "data/press.json"
+        fields:
+          - label: "Press Items"
+            name: "press"
+            widget: "list"
+            fields:
+              - {label: "Snippet", name: "snippet", widget: "text"}
+              - {label: "Read More URL", name: "readMoreUrl", widget: "string", required: false}
+
+  - name: "shows"
+    label: "Shows"
+    extension: "json"
+    format: "json"
+    files:
+      - label: "Shows"
+        name: "shows"
+        file: "data/shows.json"
+        fields:
+          - label: "Shows"
+            name: "shows"
+            widget: "list"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+
+  - name: "see-hear"
+    label: "See/Hear"
+    extension: "json"
+    format: "json"
+    files:
+      - label: "Media Items"
+        name: "seeHear"
+        file: "data/seeHear.json"
+        fields:
+          - label: "Media Items"
+            name: "seeHear"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["bandcamp", "youtube", "link", "other"]}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "URL", name: "url", widget: "string", required: false}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Embed Code", name: "embedCode", widget: "text", required: false}
