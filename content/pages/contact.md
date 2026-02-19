@@ -8,6 +8,8 @@ metaDescription: Contact bathtub cig for booking inquiries, press requests, or j
 metaKeywords: bathtub cig contact, booking inquiries, press contact, Minneapolis musician contact
 ogTitle: Contact bathtub cig
 ogDescription: Get in touch with bathtub cig for booking, press, or collaboration inquiries.
+ogImage: 'https'
+schemaType: ''
 ---
 
 Email me at: hillajames AT gmail DOT com
