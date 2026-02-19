@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: nikolas-haug/bathtubcig-static-site
   branch: master
 
 site_url: https://nikolas-haug.github.io/bathtubcig-static-site
