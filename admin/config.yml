@@ -3,6 +3,8 @@ backend:
   repo: nikolas-haug/bathtubcig-static-site
   branch: master
 
+site_url: https://bathtubcigstaticsite.netlify.app/
+
 # Local backend for development - when this is true, it will use the local proxy instead
 local_backend: false
 
