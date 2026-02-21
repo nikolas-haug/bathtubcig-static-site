@@ -1,15 +1,15 @@
-# Bathtub Cig Static Site
+# Static Site Generator
 
-A static site generator for [bathtubcig.com](https://bathtubcig.com) built with Node.js, using markdown content and JSON data files. The site compiles to static HTML/CSS/JS suitable for GitHub Pages deployment.
+A static site generator built with Node.js, using markdown content and JSON data files. Compiles to static HTML/CSS/JS suitable for GitHub Pages deployment.
 
 ## Features
 
 - **Markdown-based content** — Easy to edit page content in markdown format
-- **JSON data files** — Structured data for press, shows, and media
+- **JSON data files** — Structured data for dynamic sections (press, shows, media, etc.)
 - **Sveltia CMS** — Browser-based content editor at `/admin`
 - **SEO built-in** — Meta tags, Open Graph, Twitter Cards, sitemap, structured data, and `llms.txt`
-- **WordPress theme CSS** — Uses the same SCSS from the live WordPress theme
-- **Automatic date sorting** — Shows automatically split into upcoming/past based on date
+- **SCSS styling** — Modular SCSS compiled to a single CSS file
+- **Automatic date sorting** — Date-based content automatically split into upcoming/past
 - **Mobile-responsive** — Full navigation toggle and responsive layout
 - **Fast builds** — Simple Node.js build script with watch mode
 
@@ -18,7 +18,7 @@ A static site generator for [bathtubcig.com](https://bathtubcig.com) built with 
 ## Project Structure
 
 ```
-bathtubcig-static-site/
+your-project/
 ├── admin/
 │   ├── index.html       # Sveltia CMS entry point
 │   └── config.yml       # CMS collection configuration
@@ -26,17 +26,20 @@ bathtubcig-static-site/
 │   └── images/          # Images uploaded via CMS
 ├── content/
 │   └── pages/           # Markdown files for all pages
-│       ├── _TEMPLATE.md # Template showing all available frontmatter fields
 │       ├── index.md
 │       ├── contact.md
 │       ├── press.md
 │       ├── shows.md
 │       └── see-hear.md
 ├── data/                # JSON data files
-│   ├── site.json        # Site config (nav, social links)
+│   ├── site.json        # Site config (siteUrl, nav, social links)
 │   ├── press.json       # Press items
 │   ├── shows.json       # Show dates
 │   └── seeHear.json     # Media items (videos, bandcamp)
+├── static/              # Static assets copied verbatim into build/
+│   ├── css/             # Vendor CSS (Font Awesome)
+│   ├── js/              # JavaScript files
+│   └── webfonts/        # Font Awesome webfonts
 ├── templates/           # HTML templates
 │   ├── page.html        # Base page template
 │   ├── contact.html     # Contact page
@@ -47,11 +50,9 @@ bathtubcig-static-site/
 ├── scripts/
 │   └── build-content.js # Main build script (HTML, sitemap, SEO)
 ├── src/
-│   └── styles/          # SCSS source files
+│   └── styles/          # SCSS source files (compiled to build/css/style.css)
 ├── llms.txt             # AI discoverability file
-├── robots.txt           # Search engine crawl rules
-├── build/               # Generated output (gitignored)
-└── dist/                # Compiled CSS (gitignored)
+└── build/               # Generated output (gitignored)
 ```
 
 ---
@@ -78,10 +79,10 @@ npm run build
 ```
 
 This will:
-1. Compile SCSS from `src/styles/` to `dist/style.css`
+1. Compile SCSS from `src/styles/` to `build/css/style.css`
 2. Process markdown and JSON to generate HTML in `build/`
-3. Copy JavaScript, Font Awesome, and other assets
-4. Generate `sitemap.xml` and copy `robots.txt` / `llms.txt`
+3. Copy JavaScript, Font Awesome, and other assets from `static/`
+4. Generate `sitemap.xml`, `robots.txt`, and copy `llms.txt`
 
 The build uses **relative paths** for all links and assets, so the site works locally, on GitHub Pages subdirectory deployments, and on custom domains — no configuration changes needed.
 
@@ -109,11 +110,11 @@ Then open `http://localhost:3000` in your browser.
 
 The site includes [Sveltia CMS](https://sveltia.com), a lightweight, Git-based content editor. To use it:
 
-1. Go to `https://bathtubcig.com/admin` (or `localhost:3000/admin` when running locally).
+1. Go to `https://your-domain.com/admin` (or `localhost:3000/admin` when running locally).
 2. Log in with your GitHub account.
-3. Edit pages, press items, shows, or media through the UI — changes are committed directly to the repo, which triggers a rebuild and deploy.
+3. Edit pages and content through the UI — changes are committed directly to the repo, which triggers a rebuild and deploy.
 
-The CMS configuration is in `admin/config.yml`. It connects to the `nikolas-haug/bathtubcig-static-site` GitHub repo on the `master` branch.
+The CMS configuration is in `admin/config.yml`. Update the `repo` and `branch` fields to match your GitHub repo.
 
 ### Option B: Edit files directly
 
@@ -121,7 +122,7 @@ All content files can also be edited directly in the repo:
 
 #### Pages (Markdown files)
 
-All page content lives in `content/pages/` as markdown files. Each file uses YAML frontmatter for configuration. See `content/pages/_TEMPLATE.md` for a full list of available fields.
+All page content lives in `content/pages/` as markdown files. Each file uses YAML frontmatter for configuration. See the [All available frontmatter fields](#all-available-frontmatter-fields) section below for a full reference.
 
 Example:
 
@@ -130,7 +131,7 @@ Example:
 title: Press
 layout: press
 permalink: /press
-heroImage: /images/band/BTC.band_.08.jpg
+heroImage: /images/your-hero-image.jpg
 metaDescription: A short description for search engines.
 ---
 
@@ -182,6 +183,7 @@ Types: `bandcamp`, `youtube`, `link`, `other`
 
 Edit `data/site.json` for:
 
+- Site URL (used for canonical URLs, sitemap, and OG image fallbacks)
 - Site title and description
 - Navigation links
 - Social media icons (Instagram, Spotify, Bandcamp)
@@ -210,68 +212,87 @@ The site has comprehensive SEO built in, comparable to Yoast SEO for WordPress. 
 
 ### Quick start
 
-For most pages, just add `metaDescription` and `metaKeywords` to the frontmatter — everything else is handled automatically:
+Most pages only need these fields — everything else is handled automatically:
 
 ```yaml
 ---
-title: Your Page Title
-metaDescription: A compelling description for search results (150–160 chars).
-metaKeywords: bathtub cig, relevant, keywords, for, this, page
+title: My Page
+layout: page
+permalink: /my-page
+metaDescription: A great description for search engines (150–160 chars).
+metaKeywords: relevant, keywords, for, this, page
 ---
 ```
 
-### All available SEO fields
+That's it. The system handles the rest.
 
-#### Basic
+### All available frontmatter fields
+
+#### Page routing (required)
 
 ```yaml
-metaTitle: Custom SEO Title         # Overrides <title> tag; defaults to "{title} - bathtub cig"
+title: Your Page Title              # Displayed as page heading and used in meta title
+layout: page                        # Template to use: page, press, shows, see-hear, contact
+permalink: /your-page-url           # URL path for this page
+```
+
+#### Hero image (optional)
+
+```yaml
+heroImage: /images/your-image.jpg   # Displayed at top of page; also used as OG/Twitter image fallback
+```
+
+#### SEO: basic meta tags (recommended)
+
+```yaml
+metaTitle: Custom SEO Title         # Overrides <title> tag; defaults to "{title} - {siteTitle}"
 metaDescription: ...                # Shown in search results; 150–160 chars recommended
 metaKeywords: keyword1, keyword2    # Comma-separated
-metaAuthor: bathtub cig             # Default: bathtub cig
+metaAuthor: Your Name               # Default: siteTitle from site.json
 metaRobots: index, follow           # Default: index, follow
-canonicalUrl: https://bathtubcig.com/page/  # Auto-generated if omitted
+canonicalUrl: https://example.com/page/  # Auto-generated from siteUrl + permalink if omitted
 ```
 
-#### Open Graph (social sharing)
+#### SEO: Open Graph / social sharing (optional)
 
 ```yaml
 ogTitle: Title for social media sharing
 ogDescription: Description for Facebook, LinkedIn, Discord previews
-ogImage: https://bathtubcig.com/images/your-image.jpg  # Full URL; 1200×630px recommended
+ogImage: https://example.com/images/social-share.jpg  # Full URL; 1200×630px recommended
 ogType: website  # Options: website, article, music.song, music.album, music.playlist
 ```
 
-#### Twitter
+#### SEO: Twitter Card (optional)
 
 ```yaml
-twitterTitle: Title for Twitter cards
-twitterDescription: Description for Twitter previews
-twitterImage: https://bathtubcig.com/images/your-image.jpg  # Full URL
+twitterTitle: Title for Twitter cards      # Defaults to ogTitle
+twitterDescription: Description for Twitter previews  # Defaults to ogDescription
+twitterImage: https://example.com/images/twitter-card.jpg  # Full URL; defaults to ogImage
 ```
 
-#### Structured Data
+#### SEO: Schema.org structured data (optional)
 
 ```yaml
-schemaType: MusicGroup  # Options: MusicGroup, Person, WebPage, Article, Event
+schemaType: MusicGroup  # Options: MusicGroup, Person, WebPage, Article, Event, MusicRecording
 ```
 
 ### Smart defaults
 
 If fields are omitted, the system fills in sensible values automatically:
 
-- **metaTitle** → `{page title} - bathtub cig`
+- **metaTitle** → `{title} - {siteTitle}`
 - **metaDescription** → site description from `site.json`
-- **metaKeywords** → `bathtub cig, indie music, depression pop, Minneapolis music, Hilary James`
-- **ogImage / twitterImage** → hero image (if set), otherwise default band photo
-- **canonicalUrl** → generated from permalink
+- **metaKeywords** → `metaKeywords` from `site.json`
+- **ogImage / twitterImage** → `heroImage` if set, otherwise default site image (configured in `build-content.js`)
+- **canonicalUrl** → constructed from `siteUrl` + `sitemapUrl` in `PAGE_CONFIGS`
 - **schemaType** → `MusicGroup`
 
 ### Auto-generated files
 
 On every build:
 - `build/sitemap.xml` — all pages with priorities and change frequencies
-- `robots.txt` and `llms.txt` are copied to the build directory
+- `build/robots.txt` — generated from `siteUrl` in `data/site.json`
+- `llms.txt` is copied to the build directory
 
 ### Testing SEO after deploy
 
@@ -280,15 +301,15 @@ On every build:
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
 - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
-- [Google Search Console](https://search.google.com/search-console) — submit your sitemap at `https://bathtubcig.com/sitemap.xml`
+- [Google Search Console](https://search.google.com/search-console) — submit your sitemap at `https://your-domain.com/sitemap.xml`
 
 ---
 
 ## Deployment
 
-### Option 1: Automatic deploy via GitHub Actions (recommended)
+### Automatic deploy via GitHub Actions
 
-Every push to `main` triggers the workflow in `.github/workflows/deploy-pages.yml`, which builds the site and deploys to GitHub Pages. Changes go live within 1–2 minutes.
+Every push to `master` triggers the workflow in `.github/workflows/deploy-pages.yml`, which builds the site and deploys to GitHub Pages. Changes go live within 1–2 minutes.
 
 **One-time setup:**
 
@@ -298,19 +319,11 @@ Every push to `main` triggers the workflow in `.github/workflows/deploy-pages.ym
 
 When content is edited via Sveltia CMS, it commits directly to the repo, which automatically triggers this workflow — no local build needed.
 
-### Option 2: Manual deploy (local build)
-
-1. Run `npm run deploy:all` — builds and copies `build/` to `docs/`.
-2. Commit and push: `git add docs/ && git commit -m "Deploy site" && git push`
-3. In **Settings → Pages**, set Source to **Deploy from a branch**, choose `main`, and select the `/docs` folder.
-
 ### Custom domain
 
-To use `bathtubcig.com`:
-
-1. Add a `CNAME` file to the build output with your domain.
+1. Add a `CNAME` file to the build output with your domain name.
 2. Configure DNS A records to point to GitHub Pages IPs.
-3. Enable custom domain in repo settings.
+3. Enable the custom domain in your repo's **Settings → Pages**.
 
 ---
 
@@ -321,8 +334,6 @@ To use `bathtubcig.com`:
 | `npm run build` | Full build (CSS + content) |
 | `npm run build:css` | Compile SCSS only |
 | `npm run build:content` | Generate HTML only |
-| `npm run deploy` | Copy build to docs/ (manual deploy) |
-| `npm run deploy:all` | Build + copy to docs/ |
 | `npm run dev` | Build and watch for changes |
 | `npm run serve` | Build and serve locally at localhost:3000 |
 
@@ -330,30 +341,32 @@ To use `bathtubcig.com`:
 
 ## Theme & Styling
 
-The site uses the same SCSS as the live WordPress theme at `../themes/bathtubcig/`:
+All styles are written in SCSS and live in `src/styles/`. The partials follow a standard structure:
 
-- Dark background: `#121118`
-- Accent color: `#92c116`
-- Font: Mukta (Google Fonts)
-- Font Awesome icons for social links
+- `_variables.scss` — colors, fonts, spacing
+- `_base.scss` — base element styles
+- `_layout.scss` — page structure and grid
+- `_components.scss` — reusable UI components
+- `_utilities.scss` — helper classes
+- `main.scss` — imports all partials; this is the entry point for compilation
 
-All CSS is compiled from the WordPress theme source to ensure visual consistency.
+Font Awesome is included locally via `static/css/font-awesome.css` and `static/webfonts/`. Additional fonts can be self-hosted by adding files to `static/webfonts/` and declaring `@font-face` in `src/styles/_base.scss`.
 
 ---
 
 ## JavaScript
 
-- `navigation.js` — Mobile menu toggle with hamburger animation
-- `main.js` — Shows page toggle (upcoming/past shows)
-- jQuery included for `main.js` compatibility
+- `static/js/navigation.js` — Mobile menu toggle with hamburger animation
+- `static/js/main.js` — Shows page toggle (upcoming/past shows)
+- Both files are vanilla JS with no external dependencies
 
 ---
 
 ## Troubleshooting
 
-**Build fails:** Make sure you're in the `bathtubcig-static-site/` directory and have run `npm install`.
+**Build fails:** Make sure you're in the project root directory and have run `npm install`.
 
-**CSS not loading:** Check that `dist/style.css` was created by the build. The SCSS compiler needs access to `../themes/bathtubcig/`.
+**CSS not loading:** Check that `build/css/style.css` was created. Run `npm run build:css` separately to confirm the SCSS compiles without errors.
 
 **Shows not sorting correctly:** Verify dates in `shows.json` are in `YYYY-MM-DD` format.
 
@@ -365,4 +378,4 @@ All CSS is compiled from the WordPress theme source to ensure visual consistency
 
 ## License
 
-© bathtub cig
+© Your Name

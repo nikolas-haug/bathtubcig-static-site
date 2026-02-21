@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://bathtubcig.com/sitemap.xml
-
-# AI discoverability
-# See llms.txt for structured information about this site

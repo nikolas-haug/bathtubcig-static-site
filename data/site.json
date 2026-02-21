@@ -1,6 +1,8 @@
 {
+  "siteUrl": "https://bathtubcig.com",
   "siteTitle": "bathtub cig",
   "siteDescription": "intimate depression pop",
+  "metaKeywords": "bathtub cig, indie music, depression pop, Minneapolis music, Hilary James",
   "nav": [
     {"label": "Home", "url": ""},
     {"label": "Press", "url": "press/"},
@@ -13,5 +15,5 @@
     {"icon": "fab fa-spotify", "url": "https://open.spotify.com/artist/6YQPJVwbWzktHmpRX3Pz4i"},
     {"icon": "fab fa-bandcamp", "url": "https://bathtubcig.bandcamp.com"}
   ],
-  "googleVerification": "q2ah7SqYLssqGqwww5yp8vGo39TOQtQZtDWE4KgPIE0"
+  "googleVerification": ""
 }

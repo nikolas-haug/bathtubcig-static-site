@@ -4,12 +4,10 @@
   "description": "Static site for bathtub cig (GitHub Pages)",
   "scripts": {
     "start": "npm run build && npx serve build -p 3000",
-    "build:css": "sass src/styles/main.scss dist/style.css --style=compressed",
-    "watch:css": "sass src/styles/main.scss dist/style.css --style=compressed --watch",
+    "build:css": "mkdir -p build/css && sass src/styles/main.scss build/css/style.css --style=compressed --source-map",
+    "watch:css": "mkdir -p build/css && sass src/styles/main.scss build/css/style.css --style=compressed --source-map --watch",
     "build:content": "node scripts/build-content.js",
     "build": "npm run build:css && npm run build:content",
-    "deploy": "node scripts/deploy.js",
-    "deploy:all": "npm run build && npm run deploy",
     "dev": "nodemon --watch scripts --ext js --exec \"npm run dev:run\"",
     "serve": "npm run build && npx serve build -p 3000",
     "dev:run": "npm run build && concurrently \"node scripts/build-content.js --watch\" \"npm run watch:css\" \"npx serve build -p 3000\""
