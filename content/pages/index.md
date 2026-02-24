@@ -19,3 +19,5 @@ Their 2018 debut EP "Old Light" draws comparisons to a synth-pop version of Fran
 Their newest single "Red Pine" is a determinedly joyous sapphic bop about falling in love despite the inevitable risk of loss.  The song has been described in the press as "an exceptional piece of art" and "gorgeous vocals and some guitar work with a bit of a Big Thief quality that expands and delights with an emotional sensitivity".
 
 On September 5, 2024 bathtub cig will release "Good Mourning, I Love you". This EP is about love during a time of immense grief- the death of Hilary's mom.
+
+TEST
