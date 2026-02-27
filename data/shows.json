@@ -1,14 +1,684 @@
 {
   "shows": [
-    {
-      "date": "2026-11-15",
-      "description": "solo w/ Matt Pond PA & Anya Marina @ Kiki's House of Righteous Music. Madison, WI",
-      "url": "https://www.google.com"
-    },
-    {
-      "date": "2026-01-16T12:41:00",
-      "description": "Jan 16, 2026 - solo w/ Matt Pond PA @ Spinster Abbott’s Bar. St. Augustine, FL.",
-      "url": "https://www.eventbrite.com/e/listening-room-matt-pond-pa-tickets-1443519017239?aff=aff0bandsintown&bit_userid=${user_id}&appId=fdhnerfcnpr-znggcbaqcn&comeFrom=267&artist_event_id=107082357"
-    }
+      {
+        "date": "2026-01-18",
+        "description": "solo w/ Matt Pond PA @ The Lynx Books. Gainsville, FL.",
+        "url": "https://www.eventbrite.com/e/listening-room-matt-pond-pa-tickets-1443526780459?aff=aff0bandsintown&bit_userid=${user_id}&appId=fdhnerfcnpr-znggcbaqcn&comeFrom=267&artist_event_id=107082387"
+      },
+      {
+        "date": "2026-01-17",
+        "description": "solo w/ Matt Pond PA and Anya Marina @ Blue Jay Listening Room. Jacksonville Beach FL.",
+        "url": "https://904tix.com/events/matt-pond-pa-with-anya-marina-bathtub-cig-at-blue-jay-listening-room-1-17-2026"
+      },
+      {
+        "date": "2026-01-16",
+        "description": "solo w/ Matt Pond PA @ Spinster Abbott’s Bar. St. Augustine, FL.",
+        "url": "https://www.eventbrite.com/e/listening-room-matt-pond-pa-tickets-1443519017239?aff=aff0bandsintown&bit_userid=${user_id}&appId=fdhnerfcnpr-znggcbaqcn&comeFrom=267&artist_event_id=107082357"
+      },
+      {
+        "date": "2026-01-15",
+        "description": "solo w/ Matt Pond PA @ Kerouac House. St. Petersburg, FL.",
+        "url": "https://www.facebook.com/events/4292170014439438/?acontext=event_action_history[surfacesearchmechanismattachmentsurfacenewsfeed]ref_notif_typenull"
+      },
+      {
+        "date": "2026-01-14",
+        "description": "solo w/ Matt Pond PA @ Fogartyville Community Media Arts Center.  Sarasota, FL.",
+        "url": "https://wslrfogartyville.ticketspice.com/01142026-matt-pond-pa"
+      },
+      {
+        "date": "2026-01-03",
+        "description": "RELEASE SHOW w/ Kiernan & Nona Invie @ 7th St. Entry.  Minneapolis, MN.",
+        "url": "https://first-avenue.com/event/2026-01-bathtub-cig/"
+      },
+      {
+        "date": "2025-11-14",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Kiki’s House of Righteous Music.  Madison, WI.",
+        "url": "https://www.bandsintown.com/e/107351896-anya-marina-at-kiki's-house-of-righteous-music"
+      },
+      {
+        "date": "2025-11-13",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ The Parkway Theater.  Minneapolis, MN.",
+        "url": "https://theparkwaytheater.com/all-events/matt-pond-pa-20th"
+      },
+      {
+        "date": "2025-11-12",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Anodyne.  Milwaukee, WI",
+        "url": "https://www.bandsintown.com/e/1036492044-anya-marina-at-anodyne-coffee-roasting-co."
+      },
+      {
+        "date": "2025-11-10",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Space.  Evanston, IL.",
+        "url": "https://www.facebook.com/events/1857130195228554/"
+      },
+      {
+        "date": "2025-11-09",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Treelawn.  Cleveland, OH.",
+        "url": "https://www.bandsintown.com/e/107382587-anya-marina-at-the-treelawn"
+      },
+      {
+        "date": "2025-11-08",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ West Art.  Lancaster, PA.",
+        "url": "https://www.bandsintown.com/e/1036651965-anya-marina-at-west-art"
+      },
+      {
+        "date": "2025-11-07",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ The Falcon. Marlboro, NY.",
+        "url": "https://www.exploretock.com/the-falcon-marlboro/experience/570543/friday-november-7th-matt-pond-pa"
+      },
+      {
+        "date": "2025-11-06",
+        "description": "solo w/ Matt Pond PA @ The Fallout Shelter.  Norwood, MA.",
+        "url": "https://bostix.org/event/matt-pond-pa-live-at-the-fallout-shelter/"
+      },
+      {
+        "date": "2025-09-18",
+        "description": "solo w/ Knife Emoji @ 331 Club.  Minneapolis, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2025-09-05",
+        "description": "w/ Katy Pinke & Loud Sun @ Palmers.  Minneapolis, MN.",
+        "url": "https://palmers-bar.com/calendar/2025/9/5/loud-sun-katy-pinke-nyc-and-more"
+      },
+      {
+        "date": "2025-07-18",
+        "description": "w/ Laney Jones and the Spirits & Wild Lyre @ 7th St. Entry.  Minneapolis, MN.",
+        "url": "https://first-avenue.com/event/2025-07-laney-jones-and-the-spirits/"
+      },
+      {
+        "date": "2025-07-12",
+        "description": "w/ Beemer, & Ancient Waves @ Palmers (Outside), Minneapolis, MN.",
+        "url": "https://palmers-bar.com/calendar/2025/7/12/jarad-miles-amp-the-ancient-waves-and-friends"
+      },
+      {
+        "date": "2025-05-23",
+        "description": "solo w/ Oceanographer (release show) & Crush Scene @ Can Can Wonderland.  St. Paul, MN.",
+        "url": "https://www.cancanwonderland.com/events/oceanographer"
+      },
+      {
+        "date": "2025-05-17",
+        "description": "Art-Whirl-Festival @ Eastside Coop. Minneapolis, MN.",
+        "url": "https://www.eastsidefood.coop/news/all-together-now-2025"
+      },
+      {
+        "date": "2025-04-12",
+        "description": "w/ LINE, Kiernan & Ghosting Merit @ The Birdhouse.  Minneapolis, MN.",
+        "url": "https://www.linesoundslike.com/shows/line-kiernan-bathtub-cig-ghosting-merit-in-minneapolis"
+      },
+      {
+        "date": "2025-04-05",
+        "description": "w/ MAKR AN ERIS, Eric Mayson, & Vinny Franco @ Green Room. Minneapolis, MN.",
+        "url": "https://tickets.venuepilot.com/e/just-good-music-w-makr-an-eris-eric-mayson-bathtub-cig-vinny-franco-2025-04-05-green-room-minneapolis-c1970a?direct=true"
+      },
+      {
+        "date": "2025-02-08",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Johnny Brenda’s. Philadelphia, PA.",
+        "url": "https://www.bandsintown.com/t/106168149?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-07",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Club 603. Baltimore, MD.",
+        "url": "https://www.bandsintown.com/t/106168096?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-06",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Zoetropolis. Lancaster, PA.",
+        "url": "https://www.bandsintown.com/t/106245703?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-05",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Pittsburg Winery. Pittsburg, PA.",
+        "url": "https://www.bandsintown.com/t/106185782?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-04",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Beachland Ballroom & Tavern. Cleveland, OH.",
+        "url": "https://www.bandsintown.com/t/1033627974?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-02",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ The Hamilton Live. Washington, DC.",
+        "url": "https://www.bandsintown.com/t/106169373?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-02-01",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ Rockland Center for the Arts. West Nyack, NY.",
+        "url": "https://www.bandsintown.com/t/106169368?app_id=squarespace-mattpondpa&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket&mkt_source=www.mattpondpa.com"
+      },
+      {
+        "date": "2025-01-31",
+        "description": "w/ Matt Pond PA & Anya Marina @ Union Pool. Brooklyn, NY.",
+        "url": "https://dice.fm/event/bberng-matt-pond-pa-anya-marina-bathtub-cig-31st-jan-union-pool-new-york-tickets?pid=530cb286&_branch_match_id=1332096927505718293&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1U9MSrE0TUo1SzZPSbEvyEyxNTU2SE4ysjBTqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAOLKivkgAAAA"
+      },
+      {
+        "date": "2025-01-30",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ 3S Artspace. Portsmouth, NH.",
+        "url": "https://www.eventbrite.com/e/matt-pond-pa-w-anya-marina-and-bathtub-cig-tickets-1091225237059?aff=aff0bandsintown&bit_userid=${user_id}&appId=fdhnerfcnpr-znggcbaqcn&comeFrom=267&artist_event_id=106168300"
+      },
+      {
+        "date": "2025-01-29",
+        "description": "solo w/ Matt Pond PA & Anya Marina @ The Rockwell. Somerville, MA.",
+        "url": "https://www.bandsintown.com/e/106168120"
+      },
+      {
+        "date": "2025-01-08",
+        "description": "w/ Rosie, Jillian Rae & Bryn Battani @ 7th St. Entry. Minneapolis, MN.",
+        "url": "https://first-avenue.com/event/2025-01-rosie/"
+      },
+      {
+        "date": "2024-12-13",
+        "description": "solo w/ Absolutely Yours, Real Numbers, & Absolutely Yours @ White Squirrel. St. Paul, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-11-29",
+        "description": "(as “shower beer” electronic set) w/ Greentop & Airship Caravan @ 331 Club. Minneapolis, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-10-16",
+        "description": "solo w/ Walker Rider, Makin’ Out & Kat and the Kodachromes @ Zhora Darling. Minneapolis, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-09-29",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Pappy & Harriets Pioneertown Palace, Pioneertown, CA.",
+        "url": "https://wl.seetickets.us/event/matt-pond-pa-alexa-rose/609235?afflky=pappyandharriets"
+      },
+      {
+        "date": "2024-09-28",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Scribble, Los Angeles, CA.",
+        "url": "https://dice.fm/event/nvlaa3-matt-pond-pa-alexa-rose-28th-sep-scribble-los-angeles-tickets?lng=en-US"
+      },
+      {
+        "date": "2024-09-27",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @Hopmonk Tavern Novato, Novato, CA.",
+        "url": "https://www.seetickets.us/event/matt-pond-pa-and-alexa-rose/608549"
+      },
+      {
+        "date": "2024-09-26",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Folsom Hotel Saloon, Sacramento, CA.",
+        "url": "https://www.seetickets.us/event/matt-pond-pa-and-alexa-rose/609282"
+      },
+      {
+        "date": "2024-09-24",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Tractor Tavern, Seattle WA.",
+        "url": "https://www.ticketweb.com/event/matt-pond-pa-and-alexa-tractor-tickets/13700493?pl=tractor"
+      },
+      {
+        "date": "2024-09-22",
+        "description": "solo w/ Matt Pond PA, and Anya Marina @ Mississippi Studios. Portland, OR.",
+        "url": "https://www.etix.com/ticket/p/97925597/matt-pond-pa-anya-marina-portland-mississippi-studio"
+      },
+      {
+        "date": "2024-09-11",
+        "description": "RELEASE SHOW w/ Nat Harvie, Robot Slide, & Trash Date @ Turf Club. St. Paul, MN.",
+        "url": "https://first-avenue.com/event/2024-09-bathtub-cig/"
+      },
+      {
+        "date": "2024-06-29",
+        "description": "solo w/ Tommy Boynton- Album Release @ Resource, Minneapolis, MN.",
+        "url": "https://www.resource-mpls.com/calendar"
+      },
+      {
+        "date": "2024-05-15",
+        "description": "w/ Adelyn Strei (Brooklyn), Mary Traxler @ White Squirrel. St. Paul, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-04-20",
+        "description": "solo w/ Early Eyes, Sleeping Jesus, Emily Rhea, Trash Date @ Birdhouse. MPLS, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-03-13",
+        "description": "– solo w/ True Green, Saiga and Lyss @ Lordtown, MPLS, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2024-02-24",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Johnny Brenda’s. Philadelphia, PA.",
+        "url": "https://www.etix.com/ticket/p/70802749/matt-pond-pa-alexa-rose-philadelphia-johnny-brendas"
+      },
+      {
+        "date": "2024-02-22",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Oxbow Blending and Bottling. Portland, ME.",
+        "url": "https://www.eventbrite.com/e/matt-pond-pa-alexa-rose-call-and-response-tour-tickets-769768627687"
+      },
+      {
+        "date": "2024-02-20",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ High Ground Showcase Lounge. South Burlington, VT.",
+        "url": "https://wl.seetickets.us/event/matt-pond-pa-alexa-rose/578273?afflky=HigherGround"
+      },
+      {
+        "date": "2024-02-18",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ The Word Barn. Exter, NH.",
+        "url": "https://portsmouthnhtickets.com/events/matt-pond-alexa-rose-2-18-2024"
+      },
+      {
+        "date": "2024-02-17",
+        "description": "solo w/Matt Pond PA and Alexa Rose @ Union Pool. Brooklyn, NY.",
+        "url": "https://dice.fm/partner/loop-de-lou-production-corp-dba-union-pool/event/5p3ww-matt-pond-alexa-rose-call-and-response-release-show-17th-feb-union-pool-new-york-tickets?dice_id=1959553&dice_channel=web&dice_tags=organic&dice_campaign=Loop+De+Lou+Production+Corp+dba+Union+Pool&dice_feature=marketing&_branch_match_id=1226375022276515314&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1fdLMTU3tTROS7I0TQQAwWLY8CEAAAA"
+      },
+      {
+        "date": "2024-02-16",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Jammin Java. Vienna, VA.",
+        "url": "https://www.jamminjava.com/shows/matt-pond-pa-call-and-response-ep-release-ft-alexa-rose/"
+      },
+      {
+        "date": "2024-02-15",
+        "description": "solo w/ Matt Pond PA and Alexa Rose @ Club Cafe. Pittsburg, PA.",
+        "url": "https://www.ticketweb.com/event/matt-pond-pa-call-and-club-cafe-tickets/13266213?pl=opus&edpPlParam=plopus"
+      },
+      {
+        "date": "2024-01-10",
+        "description": "w/ Yellow Ostrich and Megasound (Bad Bad Hats) @Icehouse. MPLS, MN.",
+        "url": "https://dice.fm/event/pbd2w-yellow-ostrich-3rd-annual-winter-shindig-night-1-10th-jan-icehouse-minneapolis-tickets?pid=8cf74b3b&_branch_match_id=1226375022276515314&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1U8zTkwzSU1KMk5OTrIvyEyxtUhOMzdJMk4CAJR0d3ouAAAA"
+      },
+      {
+        "date": "2023-12-02",
+        "description": "A Tribute to The Replacements @ Turf Club. St Paul, MN.",
+        "url": "https://first-avenue.com/event/2023-12-a-tribute-to-the-replacements/"
+      },
+      {
+        "date": "2023-11-01",
+        "description": "November 1, 2023 – w/ Molly Martin @ Turf Club. St. Paul, MN.",
+        "url": "https://first-avenue.com/event/2023-11-molly-martin/"
+      },
+      {
+        "date": "2023-10-15",
+        "description": "October 15, 2023 -w/ Esme Patterson @ Cedar Cultural Center. MPLS, MN.",
+        "url": "https://www.thecedar.org/listing-2/2023/8/16/esm-patterson-with-special-guest"
+      },
+      {
+        "date": "2023-08-05",
+        "description": "August 5, 2023- w/ Present Company, Haley Blais and Babe Corner @ Turf Club. St. Paul, MN.",
+        "url": "https://first-avenue.com/event/2023-08-babe-corner-bathtub-cig-and-haley-blais/"
+      },
+      {
+        "date": "2023-07-15",
+        "description": "July 15, 2023- solo w/ Mystery Meat, Ghosting Merit and McVicker @ White Squirrel. St. Paul, MN.",
+        "url": "https://whitesquirrelbar.com/event/bathtub-cig-solo-mcvicker-ghosting-merit-mystery-meat/"
+      },
+      {
+        "date": "2023-06-23",
+        "description": "June 23, 2023- w/ Filthy Kittens and Laney Jones @ Icehouse.  MPLS, MN.",
+        "url": "https://www.icehousempls.com/events/2023/laneyjonesjune23"
+      },
+      {
+        "date": "2023-06-10",
+        "description": "June 10, 2023- w/ Holly Hansen and LAAMAR (release show) @ Turf Club. St. Paul, MN.",
+        "url": "https://www.facebook.com/events/180688957865273/?ref=newsfeed"
+      },
+      {
+        "date": "2023-06-08",
+        "description": "June 8, 2023- solo songwriter rounds w/ Jim Walsh, Whit and Monica Nikki Marie @ 331 Club.  MPLS, MN.",
+        "url": "https://taylorjamesdonskey.com/shows"
+      },
+      {
+        "date": "2023-05-07",
+        "description": "May 7, 2023- solo w/ The Natural Lines (Matt Pond PA) @ Black Cat.  Washington, DC.",
+        "url": "https://www.jambase.com/show/bathtub-cig-black-cat-20230507"
+      },
+      {
+        "date": "2023-03-25",
+        "description": "w/ Sleeping Jesus and SWEETTALKER @ icehouse, MPLS, MN.",
+        "url": "https://www.facebook.com/events/1654192375032950"
+      },
+      {
+        "date": "2023-02-19",
+        "description": "w/ Rachel Ries, Livestream.",
+        "url": "https://www.facebook.com/events/1816429565397081/?acontext=event_action_history[surfacesearchmechanismyour_upcoming_events_unitsurfacebookmark]ref_notif_typenull"
+      },
+      {
+        "date": "2023-02-05",
+        "description": "February 5, 2023- duo w/ Warmly Chrissy and Yohuna @Notaflof.  Brooklyn, NY.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-12-14",
+        "description": "w/ Dark Bunny, Ahem, Palm Friends (Release Show) @ 7th St. Entry. Minneapolis, MN.",
+        "url": "https://www.facebook.com/events/1140578696662704?ref=newsfeed"
+      },
+      {
+        "date": "2022-11-26",
+        "description": "w/ Green Button, McVicker, River Sinclaire @ Palmer’s Bar. Minneapolis, MN.",
+        "url": "https://www.facebook.com/events/826404771843413"
+      },
+      {
+        "date": "2022-10-29",
+        "description": "w/ Art For Choice Fundraiser @ Root Note. La Crosse, WI.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-10-07",
+        "description": "w/ RUTH & Harlow (EP Release) @icehouse. MPLS, MN.",
+        "url": "https://www.facebook.com/events/845489746633075/?ref=newsfeed"
+      },
+      {
+        "date": "2022-09-17",
+        "description": "duo for MidWest Music Fest @ The Root Note. La Crosse, WI.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-20",
+        "description": "solo w/ Yellow Ostrich @ Rose Music Hall. Columbia, MO.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-19",
+        "description": "solo w/ Yellow Ostrich @ Loose Cobra. Champaign-Urbana, IL.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-18",
+        "description": "solo w/ Yellow Ostrich @ Basement East. Nashville, TN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-17",
+        "description": "solo w/ Yellow Ostrich @ Masquerade. Atlanta, GA.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-16",
+        "description": "solo w/ Yellow Ostrich @ Cat’s Cradle. Carrboro, NC.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-13",
+        "description": "solo w/ Yellow Ostrich @ Mercury Lounge. New York, NY.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-12",
+        "description": "solo w/ Yellow Ostrich @ TV Eye. Brooklyn, NY.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-11",
+        "description": "solo w/ Yellow Ostrich @ Middle East Upstairs. Boston, MA.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-10",
+        "description": "solo w/ YellowOstrich @ kungfu necktie. Philadelphia, PA.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-08",
+        "description": "solo w/ Yellow Ostrich @ Rumba Cafe. Columbus, OH.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-07",
+        "description": "solo w/ Yellow Ostrich @ Underground Detroit. Detroit, MI",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-06",
+        "description": "solo w/ Yellow Ostrich @ Schubas. Chicago, IL.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-05",
+        "description": "solo w/ Yellow Ostrich @ High Noon Saloon. Madison, WI.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-04",
+        "description": "w/ Yellow Ostrich @ Colectivo. Milwaukee, Wi.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-08-02",
+        "description": "w/ Yellow Ostrich @ 7th St. Entry. MPLS, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-07-14",
+        "description": "solo w/ Sarah Cicero, Esme Patterson @ Sultan Room. New York, NY.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-07-12",
+        "description": "solo w/ Esme Patterson @ Sellersville Theater. Sellersville, PA.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2022-01-20",
+        "description": "solo w/ Yellow Ostrich and Poolboy @ Mortimers. Mpls, MN.",
+        "url": "https://www.facebook.com/events/892868951418707?ref=newsfeed"
+      },
+      {
+        "date": "2021-10-21",
+        "description": "solo w/ Paper Doll, Faith Boblett, Mother Banjo (Songwriter Round) @Aster Cafe. Mpls, MN.",
+        "url": "https://astercafe.com/event/the-minneapolis-songwriter-rounds-10-4/?fbclid=IwAR1DxRhLlY405nqxVvlZ998etZbL6GKP-oIsSn-J9MwcsADiCT6I5EH3k0Q"
+      },
+      {
+        "date": "2021-09-29",
+        "description": "solo w/ Esme Patterson @Trinidad Lounge. Trinidad, CO.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2021-09-27",
+        "description": "solo w/ Esme Patterson @ Globe Hall. Denver, CO.",
+        "url": "https://globehall.com/event/esme-patterson-presented-by-kgnu/"
+      },
+      {
+        "date": "2021-09-26",
+        "description": "solo w/ Esme Patterson @ Mesa Theater. Grand Junction, CO.",
+        "url": "https://www.eventbrite.com/e/esme-patterson-tickets-160157283747"
+      },
+      {
+        "date": "2021-09-25",
+        "description": "solo w/ Esme Patterson @ Urban Lounge. Salt Lake City, UT.",
+        "url": "https://www.24tix.com/event/1354130494"
+      },
+      {
+        "date": "2021-09-21",
+        "description": "solo w/ Esme Patterson. Polaris Hall, Portland, OR.",
+        "url": "https://dopdx.com/events/2021/9/21/esme-patterson-at-polaris-hall-tickets"
+      },
+      {
+        "date": "2021-09-14",
+        "description": "solo w/ Esme Patterson. The Quarry, Bisbee, AZ.",
+        "url": "https://www.bandsintown.com/e/102764250-esme-patterson-at-the-quarry-bisbee"
+      },
+      {
+        "date": "2021-09-04",
+        "description": "EP release show w/ Duck Turnstone (Melissa Jones), Half Tramp, and ODHP @Mortimers, MPLS, MN",
+        "url": "https://www.facebook.com/events/614833439903823"
+      },
+      {
+        "date": "2021-08-20",
+        "description": "w/ Adelyn Rose and Matt Monsoor @ Chilli Manor. La Crosse, WI.",
+        "url": "https://www.facebook.com/events/530680421416063/?ref=newsfeed"
+      },
+      {
+        "date": "2021-06-19",
+        "description": "Yellow Ostrich “release show” @ Red House. Brooklyn Park, MN.",
+        "url": "https://bathtubcig.com/"
+      },
+      {
+        "date": "2019-11-24",
+        "description": "J. Fernandez, Brent Penny @ moon palace.  MPLS, MN.",
+        "url": "https://www.facebook.com/events/420554661945130"
+      },
+      {
+        "date": "2019-09-03",
+        "description": "w/ Humbird at Blush. Duluth, MN.",
+        "url": "https://www.facebook.com/events/2131178620508972/"
+      },
+      {
+        "date": "2019-07-29",
+        "description": "w/ Mauno, Common Holly at Kitty Cat Klub. MPLS, MN.",
+        "url": "https://www.facebook.com/events/2748665375161793/"
+      },
+      {
+        "date": "2019-05-25",
+        "description": "w/ Humbird, Her Crooked Heart, Adro at Driftless. Viroqua, WI.",
+        "url": "https://www.facebook.com/events/356827028260773/?__cft__[0]=AZW9NItMg3IcTaVYX_pN7KYSMpwmPPw_ieE_dft7R3_mRr3GjnIQN3uIMQwiiiHO0j_PqHD2By-tX8kWVGZaZE32oC48fjMcZ59iqD8s8q2yuLZhQjPruSMa3BisQhQT-u9WCzKs3c49CgrOzNA93GnNJsqEsO-0vx_pLuhfcMS8yks1qlIhrkrS4VAJeFqhDqI&__tn__=H-R"
+      },
+      {
+        "date": "2019-05-03",
+        "description": "Midwest Music Fest, at Ed’s No Name Bar. Winona, MN.",
+        "url": "https://www.facebook.com/events/311293139578065/?__cft__[0]=AZXW4JoWRVdnuyn3zmhfZ-e1EmXc-1xH4227yEuzJmqq4xR--Ggm4142aktFwuQFP_2JQHxCGuTyDlDbHO4n16qHTttrdodUB_Bc_zudTRDpi5IoPojgfqXrk4L1CnCH5-uDbno0WYr2zouSX_lUoV6tg0gUyBnsZYq8vv4Xd0e7xHaxK7DBYX1okugffsn7i8Y&__tn__=H-R"
+      },
+      {
+        "date": "2019-04-29",
+        "description": "w/ Katie Von Schleicher, Nadine, Hemma at Moon Palace. MPLS, MN.",
+        "url": "https://www.facebook.com/events/371976156981675/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2019-04-04",
+        "description": "w/ Bad Bad Hats, Con Davison at Root Note. La Crosse, WI.",
+        "url": "https://www.facebook.com/events/415193942554168/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2019-03-01",
+        "description": "w/ Living Hour, Keep for Cheap at the Fallout. MPLS, MN.",
+        "url": "https://www.facebook.com/events/2286639781594518/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2019-02-01",
+        "description": "w/ Con Davison, Dreamspook at Moon Palace. MPLS, MN.",
+        "url": "https://bathtubcig.com/shows-dates/"
+      },
+      {
+        "date": "2018-11-20",
+        "description": "w/ Jennie Lawless, In/Via, Chris Gale at 7th Street Entry. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1121206091388022/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-11-17",
+        "description": "at the Lair, Carleton College. Northfield, MN.",
+        "url": "https://www.facebook.com/events/733884263634074/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-11-16",
+        "description": "w/ The Florists, Miami Dolphin, Fiji-13 at Cherry House. Eau Claire, WI.",
+        "url": "https://www.facebook.com/events/307850266691855/?__cft__[0]=AZXLNTi9iwSooJN_IBcrDJKNBcX_icaqC3f32S78Gl-Ffd6G1IiyKHUoREGpgimYfmTRap9cw4pZm8NhbEE1uGCglOpkMW628wBhLzP1vOLsfBWtibHGHB7z-NBtN8-1op5ERpBGCLw20tte0eZFdy8GZuD1zzYqvySz8kznXxdgnUjJuiBwtEqVsZyQIjPOqig&__tn__=H-R"
+      },
+      {
+        "date": "2018-11-15",
+        "description": "w/ Nat Harvie Trio at Blush. Duluth, MN.",
+        "url": "https://www.facebook.com/events/314805655780448/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-11-14",
+        "description": "w/ GALS, Parliament Lite at Dempsey’s. Fargo, ND.",
+        "url": "https://www.facebook.com/events/344062879672492/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-10-04",
+        "description": "w/ Living Hour, Strange Relations at Mortimers. MPLS, MN.",
+        "url": "https://www.facebook.com/events/238720266787842/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-10-04",
+        "description": "w/ Living Hour, Strange Relations at 7th Street Entry. MPLS, MN.",
+        "url": "https://www.facebook.com/events/238720266787842/?__cft__[0]=AZW0YiDco654SjWlYBkdbPAjiv1heAFR5pDNRgcCq5vh1j_fLvnAqNyD_aCWi9hZNwkMRgR7UW5szFMRETmZLKUP__tAC2-CKExZl8D7qkP2aP5zxW50ALEw_iuY5ZVvGDTwhERUvI6iSrRWGlbEynEonD6wm7iTnQxhHCQApaoNzb2VgMGwd1JlUUGWW2eyDMU&__tn__=H-R"
+      },
+      {
+        "date": "2018-10-01",
+        "description": "w/ Cult of Lip (release show!), Lazear, Cave Light",
+        "url": "https://www.facebook.com/events/272252836944521/?__cft__[0]=AZV8SxaN-D5FARerM7TR23NX8D8QCgHdRBWGUoHOQW0NbP6Z0AmcEbuNLfh7vl3XHw2VASwRbDp9OwgNC_nW9NLPRL485S0Gh4f4BjO9tG5h-cDiI78H9aXeewG5kd3uI71AnYXHuO-LiUShcVWxCvKOEOX3S9cKU27XHEHwfnx5EwfpT4Ww9Ho8BDmuMeCRHeI&__tn__=H-R"
+      },
+      {
+        "date": "2018-09-01",
+        "description": "w/ LVL Up (Farewell Tour), Double Grave at 7th Street Entry. MPLS, MN.",
+        "url": "https://www.facebook.com/events/572612359778857/?__cft__[0]=AZXvF0H1FCaeIgcnilLhQRZsIgNgxFAGhc7qRfYi2pLY069uxQ4kEkDgV9nOCtYQIka13pXi-C5wU26RFcpgBs4gX5PXCPs-IQuc6FH7SjDc-GE25ZKF5tCz9mdNPLvaQ4V58OM15XyImH7ETzWt2tJdiFQhoAduS7uHqFTTZzgs7h3z7eFw35ZTuOWMNFR-Szg&__tn__=H-R"
+      },
+      {
+        "date": "2018-07-04",
+        "description": "w/ Gobbinjr, Wetter, Oyster World at Kitty Cat Klub. MPLS, MN.",
+        "url": "https://www.facebook.com/events/128817191317585/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-06-28",
+        "description": "***Release Show*** w/ Wetter, Iceblink at Moon Palace. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1779258525444465/?__cft__[0]=AZVZ100HKKDYMVpcpd7QEOnMMTzdt97cU_l7fFWBJ-gxZdFILIdkwBdjVtJSwZnIvl1WcH0_K3FeJUdBhxokRDIqE68uhppUdRjaX5S-GyJmVt1hU3cxTp6SGk8i--FhoYg-ipnmvQ5qMyH3RTJtGvJtFe1_0tVwi6XsPrbQnJn_3PocaNLke-ttkiM_XNmZRMs&__tn__=H-R"
+      },
+      {
+        "date": "2018-06-28",
+        "description": "**RELEASE SHOW** w/ Wetter and Iceblink at Moon Palace. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1779258525444465/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-29",
+        "description": "w/ Double Grave (Release), Hemma at Kitty Cat Klub. MPLS, MN.",
+        "url": "https://www.facebook.com/events/205865343338306/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-06",
+        "description": "w/ Idle Empress at Cherry House. Eau Claire, WI.",
+        "url": "https://www.facebook.com/events/197303610870755/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-05",
+        "description": "w/ Sleeping Jesus, Lena Elizabeth at the Root Note. La Crosse, WI.",
+        "url": "https://www.facebook.com/events/1995401807380037/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-04",
+        "description": "w/ Violet Mice, Pledge Drive, Z + the Hunnys at Big Forever. Chicago, IL.",
+        "url": "https://www.facebook.com/events/162513714437718/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-03",
+        "description": "w/ Hot Tang, Dee Pretion at Trumpet Blossom. Iowa City, Iowa.",
+        "url": "https://www.facebook.com/events/966051443573098/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-02",
+        "description": "w/ Annalibera, Jess V at House house. Des Moines, IA.",
+        "url": "https://www.facebook.com/events/1786181918071626/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-05-01",
+        "description": "w/ Y La Bamba, Gully Boys at Icehouse. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1801505720155272/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-03-30",
+        "description": "w/ Sass, Lazear, Spellls at the Hex. MPLS, MN.",
+        "url": "https://www.facebook.com/events/395100530901584/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2018-01-28",
+        "description": "w/ Honeygold, Good Morning Midnight, Andrew Thoreen at the Eagles Club. MPLS, MN.",
+        "url": "https://www.facebook.com/events/311292622699802/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2017-11-18",
+        "description": "w/ Mina Moore, Ecca Echo at Yeah Maybe. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1434129876699522/?__cft__[0]=AZXuqnYPhWKq_Z0igt-jsvR_0Uwf7N3SwsBwgR2RSGCyh2s0kMnE2JrxqYp4dNeZicD-YJ2Lv5bfL5ZqGrJeiIEgjS-ZiJS6zBdkPhPPFJlGqcD0-5wi5ofhzykW0BhEzR3u4LtMJVhCd0QE2ydAQg87RdBTeKFOhYya60txFqZYRUy1VRXjYuWzGZch6MBornw&__tn__=H-R"
+      },
+      {
+        "date": "2017-11-15",
+        "description": "w/ Scammers, Itch Princess, Extreme FM at Eagles Club. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1924334651226134/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2017-10-25",
+        "description": "w/ The Mimzees, Pat Keen, Rob Flax at Tatterwood. MPLS, MN.",
+        "url": "https://www.facebook.com/events/303020486854522/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2017-08-02",
+        "description": "w/ Real Numbers (tour Kickoff), Loud Sun, Finesse at 7th Street Entry. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1389484697784637/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2017-07-04",
+        "description": "w/ Esme Patterson, Snoggybox at Whyworld. MPLS, MN.",
+        "url": "https://www.facebook.com/events/224098174775737/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      },
+      {
+        "date": "2017-02-11",
+        "description": "w/ Hello Shark, Diva 93 at Bird Dog’s Boneyard. MPLS, MN.",
+        "url": "https://www.facebook.com/events/1356643364409721/?acontext=event_action_history[mechanismsearch_resultssurfacesearch]"
+      }
   ]
 }

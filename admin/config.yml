@@ -3,7 +3,7 @@ backend:
   repo: nikolas-haug/bathtubcig-static-site
   branch: master
 
-local_backend: false
+local_backend: true
 
 media_folder: "assets/images" # Where uploaded images will be stored
 public_folder: "/images" # Public URL path for uploaded images

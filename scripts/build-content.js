@@ -95,7 +95,7 @@ const PAGE_CONFIGS = {
           ${show.description}
         </a>
       </p>`).join('\n')
-        : '<p>No upcoming shows at the moment. Check back soon!</p>';
+        : '<p>Check back for new shows!</p>';
 
       const pastShowsHTML = pastShows.map(show => `
     <p class="date-ref">

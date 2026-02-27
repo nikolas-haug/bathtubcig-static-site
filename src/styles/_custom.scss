@@ -51,11 +51,6 @@ iframe {
   }
 }
 
-// Contact form 7
-.wpcf7-submit {
-  width: 100%;
-}
-
 // social icons in footer
 .social-icon {
   padding: 0 1rem;
@@ -74,17 +69,14 @@ h5 {
   order: 1;
 }
 
+// hero image
+.hero-image {
+  margin-bottom: 1.5rem;
+}
+
 // press posts content
 .press-content {
   margin-bottom: 1rem;
-  // p::before {
-  //   content: open-quote;
-  //   color: $color-white;
-  // }
-  // p::after {
-  //   content: close-quote;
-  //   color: $color-white;
-  // }
 }
 
 // press posts button
@@ -98,13 +90,16 @@ a.button {
   }
 }
 
-.shows-block {
+.upcoming-shows,
+.past-shows {
   margin-bottom: 3.5rem;
 }
 
 // Show date links
 .date-ref {
   margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
   a {
     transition: all .3s;
     &:hover {
@@ -112,62 +107,23 @@ a.button {
     }
   }
   &::before {
-    display: inline-block;
     content: "";
     height: 0.75rem;
     width: 0.75rem;
+    min-width: 0.75rem;
     margin-right: 1.5rem;
+    margin-top: 0.5em;
     background-color: $color-white;
-  }
-}
-
-// Image overlay
-// Example html snippet:
-// <div class="img-overlay">
-//     <?php the_post_thumbnail( 'full', array( 'class' => 'img-100 ') ); ?>
-//     <div class="overlay">
-//         <a href="#" class="icon" title="User Profile">
-//             <i class="fa fa-user"></i>
-//         </a>
-//     </div>
-// </div>
-
-.img-overlay {
-  position: relative;
-  overflow: hidden;
-  // opacity: 0;
-  cursor: pointer;
-  &:hover .overlay {
-    // opacity: 1;
-    bottom: -100%;
   }
 }
 
 .overlay {
   position: absolute;
-  // top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  // opacity: 0;
   transition: .3s ease-out;
   background: linear-gradient(to top, #121118 0%, transparent 100%);
-}
-
-// Gutenberg styles
-.wp-block-image figure {
-  margin-top: 2rem;
-}
-
-@media (max-width: 650px) {
-  .wp-block-image .alignright {
-    float: none;
-    margin: 0;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
 }
