@@ -14,10 +14,3 @@ ogDescription: Stream bathtub cig's music and watch videos. Available on
 ogType: music.song
 schemaType: MusicGroup
 ---
-Music videos, interviews, and live performances.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nSu94_QM2fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-music video for new single "therapy"- made by Peter M.
-
-TESTING

@@ -90,6 +90,14 @@ h5 {
     }
 }
 
+// Images
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 // Links
 a {
     color: $color-link;

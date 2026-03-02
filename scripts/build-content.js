@@ -20,6 +20,125 @@ fs.ensureDirSync(path.join(BUILD_DIR, 'images'));
 fs.ensureDirSync(path.join(BUILD_DIR, 'admin'));
 
 // ============================================================
+// MEDIA URL PARSING UTILITIES
+// Functions to auto-detect and generate embeds for YouTube,
+// Bandcamp, and other media URLs
+// ============================================================
+
+/**
+ * Extract YouTube video ID from various URL formats
+ * Supports: youtube.com/watch?v=ID, youtu.be/ID, youtube.com/embed/ID
+ */
+function extractYoutubeId(url) {
+  if (!url) return null;
+  
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([^&]+)/,
+    /(?:youtu\.be\/)([^?]+)/,
+    /(?:youtube\.com\/embed\/)([^?]+)/,
+    /(?:youtube\.com\/v\/)([^?]+)/
+  ];
+  
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * Generate responsive YouTube embed iframe
+ */
+function generateYoutubeEmbed(videoId) {
+  if (!videoId) return '';
+  
+  return `<div class="media-item__embed media-item__embed--youtube">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>`;
+}
+
+/**
+ * Parse Bandcamp URL and extract album/track ID
+ * Bandcamp URLs typically: artistname.bandcamp.com/album/album-name or /track/track-name
+ */
+function parseBandcampUrl(url) {
+  if (!url) return null;
+  
+  const albumMatch = url.match(/bandcamp\.com\/album\/([^/?]+)/);
+  const trackMatch = url.match(/bandcamp\.com\/track\/([^/?]+)/);
+  
+  if (albumMatch) {
+    return { type: 'album', slug: albumMatch[1], url };
+  }
+  if (trackMatch) {
+    return { type: 'track', slug: trackMatch[1], url };
+  }
+  
+  return null;
+}
+
+/**
+ * Generate Bandcamp embed iframe
+ * Note: Bandcamp embeds require album IDs which aren't in the URL.
+ * For now, we'll return a styled link. Users can provide custom embedCode for full embeds.
+ */
+function generateBandcampEmbed(url) {
+  if (!url) return '';
+  
+  const parsed = parseBandcampUrl(url);
+  if (!parsed) return '';
+  
+  return `<div class="media-item__embed media-item__embed--bandcamp">
+  <a href="${url}" target="_blank" rel="noopener" class="bandcamp-link">
+    <span class="bandcamp-link__icon">▶</span>
+    <span class="bandcamp-link__text">Listen on Bandcamp</span>
+  </a>
+</div>`;
+}
+
+/**
+ * Main media parser - auto-detects URL type and generates appropriate embed
+ * Falls back to custom embedCode if provided, or simple link
+ */
+function parseMediaUrl(item) {
+  // Priority 1: Use custom embedCode if provided (for advanced users)
+  if (item.embedCode && item.embedCode.trim()) {
+    return `<div class="media-item__embed media-item__embed--custom">${item.embedCode}</div>`;
+  }
+  
+  // Priority 2: Auto-detect and generate embeds from URL
+  if (item.url && item.url.trim() && item.url !== '#') {
+    const url = item.url.trim();
+    
+    // Check for YouTube
+    if (url.match(/youtube\.com|youtu\.be/)) {
+      const videoId = extractYoutubeId(url);
+      if (videoId) {
+        return generateYoutubeEmbed(videoId);
+      }
+    }
+    
+    // Check for Bandcamp
+    if (url.includes('bandcamp.com')) {
+      // Check if there's a custom embed code for Bandcamp (preferred)
+      // Otherwise generate a styled link
+      return generateBandcampEmbed(url);
+    }
+    
+    // Fallback: Generic link for other URLs
+    return `<div class="media-item__embed">
+  <a href="${url}" target="_blank" rel="noopener" class="media-link">Listen/Watch</a>
+</div>`;
+  }
+  
+  // No URL or embedCode provided
+  return '';
+}
+
+// ============================================================
 // PAGE CONFIGURATIONS
 // Each entry controls how a page is built. Simple pages only
 // need routing metadata. Pages with dynamic data also define
@@ -126,33 +245,18 @@ const PAGE_CONFIGS = {
       const seeHearData = seeHearDataFile.seeHear || seeHearDataFile;
       const mediaItemsHTML = seeHearData.map(item => {
         const imageHtml = item.image
-          ? `<img src="${baseUrl}${item.image.replace(/^\//, '')}" alt="${item.title}" class="media-item-image">`
+          ? `<div class="media-item-image"><img src="${baseUrl}${item.image.replace(/^\//, '')}" alt="${item.title}" class="media-item-image"></div>`
           : '';
-        if (item.type === 'bandcamp' && item.embedCode) {
-          return `
+        
+        const embedHtml = parseMediaUrl(item);
+        
+        return `
         <div class="media-item">
           ${imageHtml}
           <h3>${item.title}</h3>
-          ${item.description ? `<p>${item.description}</p>` : ''}
-          ${item.embedCode}
+          ${item.description ? `<p class="media-item__description">${item.description}</p>` : ''}
+          ${embedHtml}
         </div>`;
-        } else if (item.type === 'youtube' && item.url) {
-          return `
-        <div class="media-item">
-          ${imageHtml}
-          <h3>${item.title}</h3>
-          ${item.description ? `<p>${item.description}</p>` : ''}
-          <p><a href="${item.url}" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </div>`;
-        } else {
-          return `
-        <div class="media-item">
-          ${imageHtml}
-          <h3>${item.title}</h3>
-          ${item.description ? `<p>${item.description}</p>` : ''}
-          ${item.url && item.url !== '#' ? `<p><a href="${item.url}" target="_blank" rel="noopener">Listen/Watch</a></p>` : ''}
-        </div>`;
-        }
       }).join('\n');
       return { introContent: page.content, mediaItems: mediaItemsHTML };
     }
@@ -319,7 +423,12 @@ function generateSEOMeta(page, siteData, baseUrl, fullUrl) {
     twitterImage: page.frontmatter.twitterImage || page.frontmatter.ogImage || defaultImage,
 
     // Schema.org
-    schemaType: page.frontmatter.schemaType || 'MusicGroup'
+    schemaType: page.frontmatter.schemaType || 'MusicGroup',
+    // Pre-escaped JSON string values for JSON-LD (avoids breaking on quotes)
+    schemaNameJson: JSON.stringify(siteData.siteTitle),
+    schemaDescriptionJson: JSON.stringify(page.frontmatter.metaDescription || siteData.siteDescription),
+    schemaUrlJson: JSON.stringify(fullUrl),
+    schemaImageJson: JSON.stringify(page.frontmatter.ogImage || defaultImage)
   };
 }
 

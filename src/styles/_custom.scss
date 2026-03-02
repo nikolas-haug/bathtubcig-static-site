@@ -4,6 +4,7 @@
 *
 */
 
+@use "sass:color";
 @use "variables" as *;
 
 .banner {
@@ -44,6 +45,83 @@ iframe {
   margin: 0 0 $typography-margins 0;
 }
 
+// Media items container - full width stacked layout
+.media-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.media-item {
+  width: 100%;
+  margin-bottom: 2rem;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: $color-link;
+  }
+  
+  &__description {
+    color: $font-color-secondary;
+    margin-bottom: 1rem;
+  }
+  
+  &__embed {
+    margin-top: 1rem;
+    width: 100%;
+    
+    &--youtube,
+    &--custom {
+      width: 100%;
+      
+      iframe {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        display: block;
+      }
+    }
+    
+    &--bandcamp {
+      .bandcamp-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #1DA0C3 0%, #1B8FA8 100%);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        
+        &:hover {
+          text-decoration: none;
+        }
+        
+        &__icon {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+  
+  .media-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba($color-secondary, 0.2);
+    color: $font-color-primary;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: rgba($color-secondary, 0.3);
+      text-decoration: none;
+    }
+  }
+}
+
 .row-gallery div {
   padding-right: 0;
   &:last-child {
@@ -53,7 +131,8 @@ iframe {
 
 // social icons in footer
 .social-icon {
-  padding: 0 1rem;
+  padding: 1rem;
+  font-size: 2.5rem;
   transition: all .3s;
 }
 
@@ -71,7 +150,9 @@ h5 {
 
 // hero image
 .hero-image {
+  position: relative;
   margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 // press posts content
@@ -112,7 +193,7 @@ a.button {
     width: 0.75rem;
     min-width: 0.75rem;
     margin-right: 1.5rem;
-    margin-top: 0.5em;
+    margin-top: 1rem;
     background-color: $color-white;
   }
 }

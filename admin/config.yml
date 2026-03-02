@@ -75,8 +75,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Type", name: "type", widget: "select", options: ["bandcamp", "youtube", "link", "other"]}
-              - {label: "Description", name: "description", widget: "text", required: false}
-              - {label: "URL", name: "url", widget: "string", required: false}
-              - {label: "Image", name: "image", widget: "image", required: false}
-              - {label: "Embed Code", name: "embedCode", widget: "text", required: false}
+              - {label: "Description", name: "description", widget: "text", required: false, hint: "Optional description of the media"}
+              - {label: "URL", name: "url", widget: "string", required: false, hint: "Paste YouTube or Bandcamp URL here - the system will auto-generate embeds"}
+              - {label: "Custom Embed Code", name: "embedCode", widget: "text", required: false, hint: "Advanced: Paste custom iframe embed code (overrides URL auto-detection)"}
+              - {label: "Image", name: "image", widget: "image", required: false, hint: "Optional thumbnail image"}

@@ -2,51 +2,58 @@
   "seeHear": [
     {
       "title": "therapy - Music Video",
-      "type": "youtube",
-      "url": "https://www.youtube.com/watch?v=VIDEO_ID",
-      "description": "Made by Peter M."
+      "description": "Made by Peter M.",
+      "url": "https://www.youtube.com/watch?v=nSu94_QM2fw",
+      "embedCode": "",
+      "image": ""
     },
     {
       "title": "bed - EP",
-      "type": "bandcamp",
-      "embedCode": "<iframe style=\"border: 0; width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=1333864388/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/bed\">bed by bathtub cig</a></iframe>",
-      "url": "https://bathtubcig.bandcamp.com/album/bed"
+      "description": "",
+      "url": "https://bathtubcig.bandcamp.com/album/bed",
+      "embedCode": "<iframe style=\"border: 0; width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=1333864388/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/bed\">bed by bathtub cig</a></iframe>"
     },
     {
       "title": "old light - EP",
-      "type": "bandcamp",
-      "embedCode": "<iframe style=\"border: 0; width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=2137083650/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/old-light\">old light by bathtub cig</a></iframe>",
-      "url": "https://bathtubcig.bandcamp.com/album/old-light"
+      "description": "",
+      "url": "https://bathtubcig.bandcamp.com/album/old-light",
+      "embedCode": "<iframe style=\"border: 0;  width: 350px; height: 470px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=2137083650/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://bathtubcig.bandcamp.com/album/old-light\">old light by bathtub cig</a></iframe>"
     },
     {
       "title": "Interview about 'bed' with Simon from 'back to the city' pt.1",
-      "type": "link",
-      "url": "#"
+      "description": "",
+      "url": "https://youtu.be/9imnGUpbjnI",
+      "embedCode": ""
     },
     {
       "title": "Interview about 'bed' with Simon for 'back to the city' pt.2",
-      "type": "link",
-      "url": "#"
+      "description": "",
+      "url": "https://youtu.be/anOGHCOgXy8",
+      "embedCode": ""
     },
     {
       "title": "sepia - A quarantine song",
-      "type": "youtube",
-      "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+      "description": "",
+      "url": "https://youtu.be/Egb1iES5nQY",
+      "embedCode": ""
     },
     {
       "title": "Live quarantine set for crybaby lounge (starts at 23:29)",
-      "type": "link",
-      "url": "#"
+      "description": "",
+      "url": "https://youtu.be/BWbWA5HmK5M",
+      "embedCode": ""
     },
     {
       "title": "Live at radio k",
-      "type": "link",
-      "url": "#"
+      "description": "",
+      "url": "https://youtu.be/2k9l0In5uMU",
+      "embedCode": ""
     },
     {
       "title": "Interview for 'old light' with Simon on 'back to the city'",
-      "type": "link",
-      "url": "#"
+      "description": "",
+      "url": "https://youtu.be/vVYPpJhY3Uc",
+      "embedCode": ""
     }
   ]
 }
